@@ -360,8 +360,7 @@
 //         Выполнять как: Я | Доступ: Все → Развернуть → скопируй URL
 //
 // Шаг 4: Вставь URL сюда ↓
-const GOOGLE_SHEETS_URL = 'ВСТАВЬ_ТВОЙ_URL_ЗДЕСЬ';
-// ═══════════════════════════════════════════════
+const FORMSPREE_URL = 'https://formspree.io/f/mwvjowed';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form      = document.getElementById('lead-form');
@@ -411,47 +410,34 @@ document.addEventListener('DOMContentLoaded', () => {
       message: form.querySelector('[name="message"]').value.trim(),
     };
 
-    let sent = false;
-
-    // Try Google Sheets
-    if (GOOGLE_SHEETS_URL !== 'ВСТАВЬ_ТВОЙ_URL_ЗДЕСЬ') {
-      try {
-        await fetch(GOOGLE_SHEETS_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        sent = true;
-      } catch (err) {
-        console.warn('Sheets error:', err);
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (res.ok && data.ok !== false) {
+        form.style.display = 'none';
+        success.style.display = 'flex';
+        if (navigator.vibrate) navigator.vibrate([15, 30, 15, 30, 80]);
+      } else {
+        throw new Error('Formspree error');
       }
-    }
-
-    // Always also send to email as backup via mailto
-    if (sent) {
-      // Show success
-      form.style.display = 'none';
-      success.style.display = 'flex';
-      if (navigator.vibrate) navigator.vibrate([15, 30, 15, 30, 80]);
-    } else {
-      // Fallback: open mailto
+    } catch (err) {
+      // Fallback: mailto
       const body = encodeURIComponent(
-        `Имя: ${payload.name}\nEmail: ${payload.email}\nКомпания: ${payload.company}\nБюджет: ${payload.budget}\nУслуга: ${payload.service}\n\n${payload.message}`
+        `Name: ${payload.name}\nEmail: ${payload.email}\nCompany: ${payload.company}\nBudget: ${payload.budget}\nService: ${payload.service}\n\n${payload.message}`
       );
-      window.location.href = `mailto:travisofwork@gmail.com?subject=Новая заявка — ${payload.name}&body=${body}`;
-
-      submitTxt.textContent = lang === 'ru'
-        ? '✓ Открываем почту...'
-        : '✓ Opening email...';
+      window.location.href = `mailto:travisofwork@gmail.com?subject=New Lead — ${payload.name}&body=${body}`;
+      submitTxt.textContent = lang === 'ru' ? '✓ Открываем почту...' : '✓ Opening email...';
       submitBtn.style.background = '#2d7a3a';
       submitBtn.style.color = '#fff';
       setTimeout(() => {
-        submitTxt.setAttribute('data-t', 'contact_send');
         submitBtn.style.background = '';
         submitBtn.style.color = '';
         submitBtn.disabled = false;
-        if (window.T) submitTxt.textContent = window.T[lang]?.contact_send || 'Send Message';
+        submitTxt.textContent = lang === 'ru' ? 'Отправить' : 'Send Message';
       }, 4000);
     }
   });
