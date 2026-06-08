@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Operix AI Automation Agency</title>
+<link rel="stylesheet" href="css/main.css">
+<style>
+.compare-table { width:100%; border-collapse:collapse; }
+.compare-table th, .compare-table td { padding:16px 20px; text-align:left; border-bottom:1px solid var(--border); font-size:14px; }
+.compare-table th { font-family:'Syne',sans-serif; font-weight:700; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+.compare-table th:not(:first-child), .compare-table td:not(:first-child) { text-align:center; }
+.compare-table td:first-child { color:rgba(244,241,237,0.7); }
+.check-y { color:var(--accent); font-size:16px; }
+.check-n { color:rgba(244,241,237,0.2); font-size:16px; }
+.col-featured { background:rgba(232,255,71,0.03); }
+.addons-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); margin-top:0; }
+.addon { background:var(--gray); padding:32px; }
+.addon-price { font-family:'Syne',sans-serif; font-weight:800; font-size:28px; letter-spacing:-1px; color:var(--accent); margin:12px 0 8px; }
+.addon h4 { font-family:'Syne',sans-serif; font-weight:700; font-size:16px; }
+.addon p { font-size:13px; color:var(--muted); line-height:1.6; }
+@media(max-width:768px){ .addons-grid{ grid-template-columns:1fr; } .compare-table{ font-size:12px; } .compare-table th,.compare-table td{ padding:12px 10px; } }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <span class="label" data-t="pricing_label"></span>
+  <h1 data-t="pricing_title"></h1>
+  <p data-t="pricing_sub"></p>
+</div>
+
+<section class="section">
+  <div class="pricing-grid">
+    <div class="plan anim">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$300<span class="suffix"> /project</span></div>
+      <div class="plan-desc">Perfect for small businesses automating one core process or launching their first AI chatbot.</div>
+      <ul class="plan-features">
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>1 AI chatbot or automation workflow</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Setup and deployment included</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Telegram or web widget integration</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>2 weeks post-launch support</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Basic performance report</li>
+      </ul>
+      <a href="contact.html" class="btn btn-ghost" style="display:block;text-align:center;padding:14px;border-radius:10px">Get Started</a>
+    </div>
+    <div class="plan featured anim">
+      <div class="plan-tag">Most Popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-price">$700<span class="suffix"> /project</span></div>
+      <div class="plan-desc">For growing businesses that need a complete automation system with multiple integrated components.</div>
+      <ul class="plan-features">
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Up to 3 AI automations or chatbots</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>CRM and tool integration</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Lead qualification system</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Monthly optimization review</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Priority support (48h response)</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Analytics dashboard</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Multi-language support</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;padding:14px;border-radius:10px">Get Started</a>
+    </div>
+    <div class="plan anim">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">Custom</div>
+      <div class="plan-desc">Full-scale AI transformation for established businesses needing deep integration and custom agents.</div>
+      <ul class="plan-features">
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Unlimited automations</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Custom AI agent development</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Full stack integration</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Dedicated account manager</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>SLA and uptime guarantee</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>Quarterly strategy reviews</li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span>White-label options available</li>
+      </ul>
+      <a href="contact.html" class="btn btn-ghost" style="display:block;text-align:center;padding:14px;border-radius:10px">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- RETAINERS -->
+<section class="section section-dark">
+  <span class="label">Monthly Retainers</span>
+  <h2 class="section-title" style="margin-bottom:16px">Keep your systems sharp.</h2>
+  <p style="color:var(--muted);font-size:16px;margin-bottom:56px;max-width:500px">Add a monthly retainer to any project for ongoing maintenance, optimization, and expansion.</p>
+  <div class="addons-grid">
+    <div class="addon anim">
+      <h4>Maintenance</h4>
+      <div class="addon-price">$100<span style="font-size:16px;color:var(--muted);font-weight:300">/mo</span></div>
+      <p>Bug fixes, uptime monitoring, minor updates. We keep your system running perfectly in the background.</p>
+    </div>
+    <div class="addon anim">
+      <h4>Growth</h4>
+      <div class="addon-price">$200<span style="font-size:16px;color:var(--muted);font-weight:300">/mo</span></div>
+      <p>Maintenance plus monthly optimization reviews, A/B testing, performance improvements, and feature additions.</p>
+    </div>
+    <div class="addon anim">
+      <h4>Scale</h4>
+      <div class="addon-price">$400<span style="font-size:16px;color:var(--muted);font-weight:300">/mo</span></div>
+      <p>Full managed service. Unlimited requests, proactive improvements, strategy calls, and priority support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+  <span class="label">Compare Plans</span>
+  <h2 class="section-title" style="margin-bottom:48px">See what's included.</h2>
+  <div style="overflow-x:auto">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Feature</th>
+          <th>Starter</th>
+          <th class="col-featured">Growth</th>
+          <th>Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>AI chatbots / automations</td><td>1</td><td class="col-featured">Up to 3</td><td>Unlimited</td></tr>
+        <tr><td>Setup & deployment</td><td class="check-y">✓</td><td class="col-featured check-y">✓</td><td class="check-y">✓</td></tr>
+        <tr><td>CRM integration</td><td class="check-n">—</td><td class="col-featured check-y">✓</td><td class="check-y">✓</td></tr>
+        <tr><td>Lead qualification</td><td class="check-n">—</td><td class="col-featured check-y">✓</td><td class="check-y">✓</td></tr>
+        <tr><td>Multi-language support</td><td class="check-n">—</td><td class="col-featured check-y">✓</td><td class="check-y">✓</td></tr>
+        <tr><td>Analytics dashboard</td><td class="check-n">—</td><td class="col-featured check-y">✓</td><td class="check-y">✓</td></tr>
+        <tr><td>Custom AI agents</td><td class="check-n">—</td><td class="col-featured check-n">—</td><td class="check-y">✓</td></tr>
+        <tr><td>Dedicated account manager</td><td class="check-n">—</td><td class="col-featured check-n">—</td><td class="check-y">✓</td></tr>
+        <tr><td>SLA guarantee</td><td class="check-n">—</td><td class="col-featured check-n">—</td><td class="check-y">✓</td></tr>
+        <tr><td>Post-launch support</td><td>2 weeks</td><td class="col-featured">1 month</td><td>Ongoing</td></tr>
+        <tr><td>Delivery time</td><td>3–5 days</td><td class="col-featured">5–7 days</td><td>Custom</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-dark">
+  <span class="label">Questions about pricing</span>
+  <h2 class="section-title" style="margin-bottom:48px">Clear answers.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Are there any hidden fees?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">Never. The price you see is the price you pay for setup. The only ongoing cost is your chosen retainer plan (optional) and any third-party API costs (e.g. AI model usage), which we'll estimate upfront.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you require payment upfront?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">We typically take 50% upfront and 50% on delivery. For Enterprise clients, we can structure payment milestones. We accept bank transfer, Wise, and crypto.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I need something between plans?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">All plans are customizable. Book a free audit call and we'll scope your exact needs and give you a custom quote — no pressure, no obligation.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a money-back guarantee?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">If we fail to deliver what was agreed in the project scope, you get a full refund. We stand behind our work completely.</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

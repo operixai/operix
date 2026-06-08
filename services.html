@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Operix AI Automation Agency</title>
+<link rel="stylesheet" href="css/main.css">
+<style>
+.service-detail {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 80px; align-items: center;
+  padding: 80px 0; border-bottom: 1px solid var(--border);
+}
+.service-detail:last-child { border-bottom: none; }
+.service-detail.reverse { direction: rtl; }
+.service-detail.reverse > * { direction: ltr; }
+.service-detail-meta { display: flex; flex-direction: column; gap: 24px; }
+.service-detail-meta h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(30px,4vw,48px); letter-spacing:-2px; line-height:1.05; }
+.service-detail-meta p { font-size:16px; line-height:1.75; color:var(--muted); }
+.service-detail-visual {
+  background: var(--gray); border: 1px solid var(--border);
+  border-radius: 16px; padding: 40px; min-height: 320px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.service-detail-visual::before {
+  content:''; position:absolute; top:-60px; right:-60px;
+  width:200px; height:200px;
+  background: radial-gradient(circle, rgba(232,255,71,0.06) 0%, transparent 70%);
+}
+.visual-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(232,255,71,0.08); border:1px solid rgba(232,255,71,0.2);
+  padding:6px 14px; border-radius:8px; font-size:12px;
+  font-family:'Syne',sans-serif; font-weight:600; color:var(--accent);
+  width:fit-content;
+}
+.visual-metrics { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.visual-metric { background:var(--gray2); border-radius:10px; padding:20px; }
+.visual-metric-num { font-family:'Syne',sans-serif; font-weight:800; font-size:32px; letter-spacing:-1px; color:var(--white); }
+.visual-metric-num span { color:var(--accent); }
+.visual-metric-label { font-size:12px; color:var(--muted); margin-top:4px; }
+.feature-list { display:flex; flex-direction:column; gap:12px; }
+.feature-item { display:flex; align-items:flex-start; gap:12px; font-size:14px; color:rgba(244,241,237,0.7); }
+.feature-item svg { width:14px; height:14px; stroke:var(--accent); flex-shrink:0; margin-top:2px; }
+@media(max-width:768px){ .service-detail{ grid-template-columns:1fr; gap:40px; } .service-detail.reverse{ direction:ltr; } }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <span class="label">Services</span>
+  <h1>Everything you need to automate your business.</h1>
+  <p>From a single chatbot to a full AI infrastructure — we build it, deploy it, and maintain it.</p>
+</div>
+
+<section class="section">
+
+  <!-- 01 -->
+  <div class="service-detail" id="chatbots">
+    <div class="service-detail-meta anim">
+      <span class="label">01 — AI Customer Support</span>
+      <h2>Never miss a customer again.</h2>
+      <p>We build intelligent conversational AI that handles customer inquiries, qualifies leads, books appointments, and escalates complex cases to your team — all automatically, in any language, around the clock.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Multi-language support (English, Russian, Spanish + more)</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Telegram, WhatsApp, website widget integration</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>CRM sync — every conversation logged automatically</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Smart escalation to human agents when needed</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Conversation analytics dashboard</div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Get started — from $300</a>
+        <a href="cases.html" class="btn btn-ghost">See case studies</a>
+      </div>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag"><svg width="10" height="10"><circle cx="5" cy="5" r="5" fill="var(--accent)"/></svg>Live</div>
+      <div style="margin:24px 0;flex:1;display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--gray2);border-radius:12px 12px 12px 4px;padding:12px 16px;font-size:13px;color:rgba(244,241,237,0.7);max-width:80%">Hi! I'm interested in the 3BR listing on Oak Street.</div>
+        <div style="background:rgba(232,255,71,0.08);border:1px solid rgba(232,255,71,0.15);border-radius:12px 12px 4px 12px;padding:12px 16px;font-size:13px;color:var(--white);max-width:80%;align-self:flex-end">Great choice! That property is available. What's your budget range and preferred move-in date? I can schedule a viewing in the next 60 seconds.</div>
+        <div style="background:var(--gray2);border-radius:12px 12px 12px 4px;padding:12px 16px;font-size:13px;color:rgba(244,241,237,0.7);max-width:80%">Budget around $2,400/mo. Can view this weekend.</div>
+        <div style="background:rgba(232,255,71,0.08);border:1px solid rgba(232,255,71,0.15);border-radius:12px 12px 4px 12px;padding:12px 16px;font-size:13px;color:var(--white);max-width:80%;align-self:flex-end">Perfect! I've scheduled Saturday 10am for you and notified the agent. Confirmation sent to your email.</div>
+      </div>
+      <div class="visual-metrics">
+        <div class="visual-metric"><div class="visual-metric-num">2<span>m</span></div><div class="visual-metric-label">Avg response time</div></div>
+        <div class="visual-metric"><div class="visual-metric-num">89<span>%</span></div><div class="visual-metric-label">Auto-resolved tickets</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="service-detail reverse" id="automation">
+    <div class="service-detail-meta anim">
+      <span class="label">02 — Workflow Automation</span>
+      <h2>Kill the busywork. Keep the results.</h2>
+      <p>We map your most time-consuming processes and replace them with AI-powered workflows. Data entry, report generation, email follow-ups, invoice processing — if it's repetitive, we automate it.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Process mapping and bottleneck audit included</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Integration with 200+ tools via API</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Automated reporting and alerts</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Error handling and fallback logic built-in</div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="width:fit-content">Get started — from $500</a>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag">Automation Flow</div>
+      <div style="margin:28px 0;flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:12px;background:var(--gray2);border-radius:10px;padding:14px 16px;">
+          <div style="width:32px;height:32px;border-radius:8px;background:rgba(232,255,71,0.1);border:1px solid rgba(232,255,71,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14"><use href="#i-mail" style="stroke:var(--accent)"/></svg></div>
+          <div><div style="font-size:13px;font-weight:500">New email received</div><div style="font-size:11px;color:var(--muted)">Trigger</div></div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--accent)"></div>
+        </div>
+        <div style="display:flex;justify-content:center"><div style="width:1px;height:20px;background:var(--border)"></div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:var(--gray2);border-radius:10px;padding:14px 16px;">
+          <div style="width:32px;height:32px;border-radius:8px;background:rgba(232,255,71,0.1);border:1px solid rgba(232,255,71,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14"><use href="#i-cpu" style="stroke:var(--accent)"/></svg></div>
+          <div><div style="font-size:13px;font-weight:500">AI classifies &amp; extracts data</div><div style="font-size:11px;color:var(--muted)">Processing</div></div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--accent)"></div>
+        </div>
+        <div style="display:flex;justify-content:center"><div style="width:1px;height:20px;background:var(--border)"></div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:var(--gray2);border-radius:10px;padding:14px 16px;">
+          <div style="width:32px;height:32px;border-radius:8px;background:rgba(232,255,71,0.1);border:1px solid rgba(232,255,71,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14"><use href="#i-chart" style="stroke:var(--accent)"/></svg></div>
+          <div><div style="font-size:13px;font-weight:500">CRM updated + team notified</div><div style="font-size:11px;color:var(--muted)">Action</div></div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--accent)"></div>
+        </div>
+      </div>
+      <div class="visual-metrics">
+        <div class="visual-metric"><div class="visual-metric-num">20<span>h</span></div><div class="visual-metric-label">Saved per week avg</div></div>
+        <div class="visual-metric"><div class="visual-metric-num">0<span>%</span></div><div class="visual-metric-label">Human error rate</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="service-detail" id="leads">
+    <div class="service-detail-meta anim">
+      <span class="label">03 — AI Lead Generation</span>
+      <h2>Your sales pipeline. On autopilot.</h2>
+      <p>We build automated prospecting systems that find your ideal customers, craft personalized outreach, and nurture them until they're ready to buy — without lifting a finger.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>AI-powered prospect research and scoring</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Personalized outreach at scale</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Follow-up sequences fully automated</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Lead qualification before reaching your team</div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="width:fit-content">Get started — from $400</a>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag">Lead Pipeline</div>
+      <div style="margin:28px 0;flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">
+          <span>Stage</span><span>Count</span><span>Value</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#60a5fa;display:inline-block"></span>Discovered</span>
+          <span style="font-size:13px;font-family:'Syne',sans-serif;font-weight:700">247</span>
+          <span style="font-size:13px;color:var(--muted)">—</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Contacted</span>
+          <span style="font-size:13px;font-family:'Syne',sans-serif;font-weight:700">89</span>
+          <span style="font-size:13px;color:var(--muted)">—</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;display:inline-block"></span>Qualified</span>
+          <span style="font-size:13px;font-family:'Syne',sans-serif;font-weight:700">31</span>
+          <span style="font-size:13px;color:var(--muted)">$186k</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0">
+          <span style="font-size:13px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block"></span>Closed</span>
+          <span style="font-size:13px;font-family:'Syne',sans-serif;font-weight:700;color:var(--accent)">12</span>
+          <span style="font-size:13px;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700">$72k</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="service-detail reverse" id="analytics">
+    <div class="service-detail-meta anim">
+      <span class="label">04 — AI Analytics & Reporting</span>
+      <h2>Data that actually drives decisions.</h2>
+      <p>We build AI systems that collect, process, and surface the insights that matter — automatically delivered to you every morning, so you always know what's working.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Automated daily/weekly performance reports</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>AI narrative — plain English explanation of your data</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Anomaly detection and instant alerts</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Connects to your existing data sources</div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="width:fit-content">Get started — from $600</a>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag">Weekly Report — AI Generated</div>
+      <div style="margin:20px 0;flex:1">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Revenue this week</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:40px;letter-spacing:-2px;margin-bottom:4px">$48,200 <span style="font-size:16px;color:#4ade80;font-weight:400">+23%</span></div>
+        <div style="height:60px;display:flex;align-items:flex-end;gap:4px;margin:16px 0">
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:40%"></div>
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:60%"></div>
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:45%"></div>
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:75%"></div>
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:55%"></div>
+          <div style="flex:1;background:var(--gray2);border-radius:4px;height:85%"></div>
+          <div style="flex:1;background:rgba(232,255,71,0.5);border-radius:4px;height:100%"></div>
+        </div>
+        <div style="background:var(--gray2);border-radius:10px;padding:14px;font-size:13px;color:rgba(244,241,237,0.7);line-height:1.6;border-left:2px solid var(--accent)">
+          <strong style="color:var(--white)">AI Insight:</strong> Revenue peaked on Friday driven by email campaign. Recommend increasing send frequency to Tue/Fri. Top product: Premium Plan (+41% WoW).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="service-detail" id="content">
+    <div class="service-detail-meta anim">
+      <span class="label">05 — AI Content Machine</span>
+      <h2>Content that never stops publishing.</h2>
+      <p>We build fully automated content pipelines that research topics, generate on-brand posts, write email campaigns, and schedule everything — while your team focuses on strategy.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>30 social posts per month — zero manual effort</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Email newsletter automation</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Product description generation at scale</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Brand voice training included</div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="width:fit-content">Get started — from $200/mo</a>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag">Content Queue</div>
+      <div style="margin:20px 0;flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--gray2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:13px;font-weight:500">LinkedIn Post #14</div><div style="font-size:11px;color:var(--muted)">Scheduled · Mon 9:00am</div></div>
+          <span style="background:rgba(74,222,128,0.1);color:#4ade80;border-radius:6px;padding:3px 10px;font-size:11px;font-family:'Syne',sans-serif;font-weight:600">Ready</span>
+        </div>
+        <div style="background:var(--gray2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:13px;font-weight:500">Email Newsletter</div><div style="font-size:11px;color:var(--muted)">Scheduled · Wed 10:00am</div></div>
+          <span style="background:rgba(74,222,128,0.1);color:#4ade80;border-radius:6px;padding:3px 10px;font-size:11px;font-family:'Syne',sans-serif;font-weight:600">Ready</span>
+        </div>
+        <div style="background:var(--gray2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:13px;font-weight:500">Twitter Thread #7</div><div style="font-size:11px;color:var(--muted)">Generating...</div></div>
+          <span style="background:rgba(232,255,71,0.1);color:var(--accent);border-radius:6px;padding:3px 10px;font-size:11px;font-family:'Syne',sans-serif;font-weight:600">AI</span>
+        </div>
+        <div style="background:var(--gray2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:13px;font-weight:500">Product Desc. Batch</div><div style="font-size:11px;color:var(--muted)">Queue · 47 items</div></div>
+          <span style="background:rgba(148,163,184,0.1);color:var(--muted);border-radius:6px;padding:3px 10px;font-size:11px;font-family:'Syne',sans-serif;font-weight:600">Queued</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="service-detail reverse" id="agents">
+    <div class="service-detail-meta anim">
+      <span class="label">06 — Custom AI Agents</span>
+      <h2>A digital employee built for your business.</h2>
+      <p>Need something that doesn't fit a template? We build fully custom AI agents that reason, plan, and act on multi-step tasks — integrated deeply with your existing stack.</p>
+      <div class="feature-list">
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Custom reasoning and planning capabilities</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Connects to your internal databases and APIs</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Multi-step task execution autonomously</div>
+        <div class="feature-item"><svg><use href="#i-check"/></svg>Full audit trail and transparency logs</div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="width:fit-content">Get started — from $1,000</a>
+    </div>
+    <div class="service-detail-visual anim">
+      <div class="visual-tag">Agent Activity Log</div>
+      <div style="margin:20px 0;flex:1;display:flex;flex-direction:column;gap:8px;font-size:12px;font-family:monospace">
+        <div style="color:var(--muted)">[09:14:02] Task received: Generate Q3 investor report</div>
+        <div style="color:#60a5fa">[09:14:03] Fetching sales data from CRM...</div>
+        <div style="color:#60a5fa">[09:14:05] Pulling analytics from dashboard...</div>
+        <div style="color:var(--accent)">[09:14:08] Analyzing trends with AI...</div>
+        <div style="color:var(--accent)">[09:14:12] Generating executive summary...</div>
+        <div style="color:#4ade80">[09:14:15] Report compiled — 14 pages</div>
+        <div style="color:#4ade80">[09:14:16] Emailed to CEO, CFO, Board</div>
+        <div style="color:var(--muted)">[09:14:16] Task complete. Time: 14.2s</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="section section-dark">
+  <span class="label">FAQ</span>
+  <h2 class="section-title" style="margin-bottom:56px">Common questions.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to build and deploy?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">Most projects go live in 3–7 days. Simple chatbots can be deployed in 24–48 hours. Complex custom agents with deep integrations typically take 2–3 weeks.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need technical knowledge?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">None whatsoever. We handle everything — from architecture to deployment to ongoing maintenance. You just tell us the outcome you want.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What tools and platforms can you integrate with?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">We integrate with virtually any platform via API — Salesforce, HubSpot, Notion, Slack, Telegram, WhatsApp, Shopify, Gmail, and 200+ others. If it has an API, we can connect to it.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there ongoing support after launch?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Every project includes at least 2 weeks of post-launch support. Retainer plans include ongoing monitoring, optimization, and updates as your business evolves.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can you work with businesses outside the US?<span class="faq-icon"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. We work with clients globally — USA, Europe, CIS, Middle East, and Asia. We communicate in English and Russian, and our systems support any language.</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
