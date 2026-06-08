@@ -19,7 +19,7 @@ const NAV_HTML = `
 </svg>
 <nav>
   <a href="index.html" class="logo" style="padding:0">
-    <img src="logo.png" alt="Operix" style="height:36px;width:auto;display:block;object-fit:contain;" />
+    <img src="logo.png" alt="Operix" style="height:44px;width:auto;display:block;object-fit:contain;" />
   </a>
   <ul class="nav-links">
     <li><a href="services.html" data-t="nav_services"></a></li>
@@ -70,7 +70,7 @@ const FOOTER_HTML = `
   <div class="footer-top">
     <div class="footer-brand">
       <a href="index.html" class="logo" style="padding:0;margin-bottom:4px">
-        <img src="logo.png" alt="Operix" style="height:32px;width:auto;display:block;object-fit:contain;" />
+        <img src="logo.png" alt="Operix" style="height:38px;width:auto;display:block;object-fit:contain;" />
       </a>
       <p data-t="footer_desc"></p>
     </div>
