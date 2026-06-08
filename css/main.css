@@ -139,7 +139,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 }
 .hero h1 .accent { color: var(--accent); }
 .hero h1 .stroke {
-  -webkit-text-stroke: 1px rgba(244,241,237,0.3);
+  -webkit-text-stroke: 0px rgba(244,241,237,0.3);
   color: transparent;
 }
 
@@ -495,15 +495,22 @@ footer {
 
 /* ── MOBILE MENU ── */
 .mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  border-radius: 0;
-  padding: 8px 4px;
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 6px 4px;
   cursor: pointer;
   color: var(--white);
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+  }
 }
 .mobile-menu {
   display: none;
@@ -545,8 +552,8 @@ footer {
   footer { padding: 56px 24px 32px; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
-  .section { padding: 64px 24px; }
-  .section-dark { padding: 64px 24px; }
+  .section { padding: 48px 20px; }
+  .section-dark { padding: 48px 20px; }
   .pricing-section { padding: 64px 24px; }
 }
 
