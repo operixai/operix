@@ -178,6 +178,8 @@
   .form-card-body { padding: 24px; }
 }
 </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
 <div id="nav-placeholder"></div>
@@ -416,29 +418,26 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const data = await res.json();
-      if (res.ok && data.ok !== false) {
+      if (res.ok) {
         form.style.display = 'none';
         success.style.display = 'flex';
         if (navigator.vibrate) navigator.vibrate([15, 30, 15, 30, 80]);
       } else {
-        throw new Error('Formspree error');
+        throw new Error('Failed');
       }
     } catch (err) {
-      // Fallback: mailto
-      const body = encodeURIComponent(
-        `Name: ${payload.name}\nEmail: ${payload.email}\nCompany: ${payload.company}\nBudget: ${payload.budget}\nService: ${payload.service}\n\n${payload.message}`
-      );
-      window.location.href = `mailto:travisofwork@gmail.com?subject=New Lead — ${payload.name}&body=${body}`;
-      submitTxt.textContent = lang === 'ru' ? '✓ Открываем почту...' : '✓ Opening email...';
-      submitBtn.style.background = '#2d7a3a';
-      submitBtn.style.color = '#fff';
-      setTimeout(() => {
-        submitBtn.style.background = '';
-        submitBtn.style.color = '';
-        submitBtn.disabled = false;
-        submitTxt.textContent = lang === 'ru' ? 'Отправить' : 'Send Message';
-      }, 4000);
+      submitBtn.disabled = false;
+      submitTxt.textContent = lang === 'ru' ? 'Отправить' : 'Send Message';
+      let errEl = document.getElementById('form-error');
+      if (!errEl) {
+        errEl = document.createElement('p');
+        errEl.id = 'form-error';
+        errEl.style.cssText = 'color:#ff6b6b;font-size:13px;margin-top:12px;text-align:center;';
+        submitBtn.parentNode.appendChild(errEl);
+      }
+      errEl.textContent = lang === 'ru'
+        ? 'Ошибка. Напишите нам: travisofwork@gmail.com'
+        : 'Failed. Email us: travisofwork@gmail.com';
     }
   });
 });
