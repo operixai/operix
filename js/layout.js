@@ -19,7 +19,7 @@ const NAV_HTML = `
 </svg>
 <nav>
   <a href="index.html" class="logo" style="padding:0">
-    <img src="logo.png?v=3" alt="Operix" style="height:44px;width:auto;display:block;object-fit:contain;" />
+    <img src="logo.png?v=3" alt="Operix" style="height:28px;width:auto;display:block;object-fit:contain;" />
   </a>
   <ul class="nav-links">
     <li><a href="services.html" data-t="nav_services"></a></li>
@@ -34,11 +34,11 @@ const NAV_HTML = `
       <button class="lang-btn" data-lang="ru">RU</button>
     </div>
     <a href="contact.html" class="btn btn-primary" data-t="nav_cta"></a>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-      <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0" width="24" height="2.5" rx="1.25" fill="#E8FF47"/>
-        <rect y="7.75" width="18" height="2.5" rx="1.25" fill="#F4F1ED"/>
-        <rect y="15.5" width="12" height="2.5" rx="1.25" fill="#E8FF47"/>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" style="background:none;border:none;padding:6px;cursor:pointer;display:none;align-items:center;justify-content:center;">
+      <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0"  width="26" height="2.5" rx="1.25" fill="#E8FF47"/>
+        <rect x="0" y="8.75" width="20" height="2.5" rx="1.25" fill="#F4F1ED"/>
+        <rect x="0" y="17.5" width="13" height="2.5" rx="1.25" fill="#E8FF47"/>
       </svg>
     </button>
   </div>
@@ -74,7 +74,7 @@ const FOOTER_HTML = `
   <div class="footer-top">
     <div class="footer-brand">
       <a href="index.html" class="logo" style="padding:0;margin-bottom:4px">
-        <img src="logo.png?v=3" alt="Operix" style="height:38px;width:auto;display:block;object-fit:contain;" />
+        <img src="logo.png?v=3" alt="Operix" style="height:24px;width:auto;display:block;object-fit:contain;" />
       </a>
       <p data-t="footer_desc"></p>
     </div>
