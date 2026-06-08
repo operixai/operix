@@ -496,9 +496,14 @@ footer {
 /* ── MOBILE MENU ── */
 .mobile-menu-btn {
   display: none;
-  background: none; border: 1px solid var(--border);
-  border-radius: 8px; padding: 8px; cursor: pointer;
-  color: var(--white); align-items: center; justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 8px 4px;
+  cursor: pointer;
+  color: var(--white);
+  align-items: center;
+  justify-content: center;
 }
 .mobile-menu {
   display: none;
