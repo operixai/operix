@@ -582,3 +582,60 @@ footer {
   .card { -webkit-tap-highlight-color: rgba(232,255,71,0.08); }
   .haptic-light, .haptic-medium { -webkit-tap-highlight-color: transparent; }
 }
+
+/* ── RUSSIAN LANGUAGE LAYOUT FIXES ── */
+/* Prevent long Russian words from breaking layouts */
+.card, .card-body, .step-item, .pricing-card,
+.testimonial-card, .case-card, .contact-way,
+.footer-col, .hero, .section-head, .cta-banner,
+.blog-card-body, .service-detail {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Fix fixed-height elements that can overflow with Russian text */
+.card-icon + * { min-height: unset; }
+.stat-desc { min-height: unset; line-height: 1.5; }
+.step-desc { min-height: unset; }
+
+/* Prevent nav items from wrapping on Russian */
+.nav-links a {
+  white-space: nowrap;
+}
+
+/* Fix pricing features list spacing in Russian */
+.pricing-features li {
+  line-height: 1.5;
+  align-items: flex-start;
+}
+.pricing-features li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Fix hero title not overflowing on mobile with Russian */
+.hero h1 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix badge/tag elements */
+.badge, .label, .blog-tag {
+  white-space: nowrap;
+}
+
+/* Fix step connector line on Russian (text can be taller) */
+.steps-grid {
+  align-items: start;
+}
+
+/* Fix grid cards equal height issues with longer Russian text */
+.grid-3, .grid-2 {
+  align-items: start;
+}
+
+/* Services page detail cards */
+.service-feature {
+  align-items: flex-start;
+}
