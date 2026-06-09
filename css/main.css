@@ -651,3 +651,59 @@ footer {
 .service-feature {
   align-items: flex-start;
 }
+
+/* ── FINAL MOBILE FIXES ── */
+@media (max-width: 768px) {
+  /* Logo size on mobile */
+  .nav-logo img, .logo img {
+    height: 24px !important;
+    width: auto !important;
+  }
+
+  /* Remove huge gaps between sections */
+  .hero { padding: 80px 20px 48px; }
+  .section { padding: 48px 20px; }
+  .section-dark { padding: 48px 20px; }
+  
+  /* Hero heading size on mobile */
+  .hero h1 { font-size: clamp(36px, 10vw, 56px); line-height: 1.05; }
+
+  /* Fix hero h1_2 stroke on mobile */
+  .hero h1 .stroke {
+    color: rgba(244,241,237,0.5) !important;
+    -webkit-text-stroke: 0 !important;
+  }
+
+  /* Burger button — force clean */
+  .mobile-menu-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .mobile-menu-btn:focus,
+  .mobile-menu-btn:active {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Fix empty sections gap */
+  .hero-orb { display: none; }
+
+  /* Proof section on mobile */
+  .hero-social-proof { flex-wrap: wrap; gap: 12px; }
+
+  /* Stats tighter on mobile */
+  .stats-grid { gap: 16px; margin-top: 40px; }
+
+  /* CTA section padding */
+  .cta-banner { padding: 40px 20px; }
+  .cta-banner h2 { font-size: 28px; }
+
+  /* Footer columns stacked */
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+}
