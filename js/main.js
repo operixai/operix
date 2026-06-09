@@ -336,7 +336,7 @@ const T = {
     contact_a4: 'Custom implementation roadmap',
     contact_a5: 'No obligation, completely free',
     contact_online: 'Online',
-    contact_hours: 'Mon–Sat · 9am–10pm (UTC+5)',
+    contact_hours: 'Available 24/7',
 
     // FOOTER
     footer_desc: 'Global AI automation agency helping businesses scale through intelligent systems and AI agents.',
@@ -720,7 +720,7 @@ const T = {
     contact_a4: 'Кастомный план внедрения',
     contact_a5: 'Без обязательств, абсолютно бесплатно',
     contact_online: 'Онлайн',
-    contact_hours: 'Пн–Сб · 9:00–22:00 (UTC+5)',
+    contact_hours: 'Доступны 24/7',
 
     // FOOTER
     footer_desc: 'Глобальное агентство AI автоматизации — помогаем бизнесу масштабироваться через умные системы и AI агентов.',
