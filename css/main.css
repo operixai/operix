@@ -815,3 +815,116 @@ footer {
   .stat-number { font-size: 32px !important; }
   .btn-xl { padding: 14px 20px !important; font-size: 14px !important; }
 }
+
+/* ── BUTTON FIXES ── */
+.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  line-height: 1.2 !important;
+  box-sizing: border-box !important;
+}
+.btn span, .btn [data-t] {
+  white-space: nowrap;
+  display: inline;
+}
+.cta-banner-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+.cta-banner-actions .btn {
+  min-width: 140px !important;
+}
+/* Services ghost button - clearly visible */
+.cta-banner-actions .btn-ghost {
+  border: 1.5px solid rgba(244,241,237,0.5) !important;
+  padding: 14px 28px !important;
+}
+.cta-banner-actions .btn-ghost:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* ── MOBILE LAYOUT FINAL ── */
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-inner { padding: 0 16px; height: 60px; }
+  .nav-links { display: none !important; }
+  .nav-right .btn { display: none !important; }
+  .nav-right .lang-switcher { display: flex !important; }
+  .mobile-menu-btn {
+    display: flex !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 6px !important;
+  }
+
+  /* Hero */
+  .hero { padding: 80px 16px 48px !important; text-align: left; }
+  .hero h1 { font-size: clamp(32px, 8.5vw, 50px) !important; line-height: 1.05 !important; }
+  .hero h1 .stroke { color: rgba(244,241,237,0.45) !important; -webkit-text-stroke: 0 !important; }
+  .hero-sub { font-size: 15px !important; max-width: 100% !important; }
+  .hero-actions { flex-direction: column !important; gap: 10px !important; width: 100% !important; }
+  .hero-actions .btn { width: 100% !important; justify-content: center !important; }
+
+  /* Sections */
+  .section, .section-dark { padding: 44px 16px !important; }
+  .section-head { flex-direction: column !important; gap: 16px !important; align-items: flex-start !important; }
+  .section-head .btn { width: 100% !important; justify-content: center !important; text-align: center !important; }
+
+  /* Grids → single column */
+  .grid-3, .grid-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .steps-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+  /* Cards */
+  .card { height: auto !important; padding: 24px 18px !important; }
+  .card-price { margin-top: 16px !important; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .stat-number { font-size: 32px !important; }
+
+  /* CTA Banner */
+  .cta-banner { padding: 32px 16px !important; flex-direction: column !important; gap: 24px !important; text-align: left !important; }
+  .cta-banner h2 { font-size: clamp(22px, 5vw, 32px) !important; }
+  .cta-banner-actions { width: 100% !important; flex-direction: column !important; }
+  .cta-banner-actions .btn { width: 100% !important; justify-content: center !important; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .footer-bottom { flex-direction: column !important; gap: 12px !important; text-align: center !important; }
+
+  /* Blog */
+  .blog-grid { grid-template-columns: 1fr !important; }
+
+  /* Cases */
+  .cases-grid { grid-template-columns: 1fr !important; }
+
+  /* Page headers */
+  .page-header { padding: 100px 16px 48px !important; }
+  .page-header h1 { font-size: clamp(28px, 7vw, 48px) !important; }
+
+  /* Niche preview */
+  .niche-preview-inner { grid-template-columns: 1fr !important; }
+  .niche-preview-results { grid-template-columns: 1fr 1fr !important; }
+  
+  /* Marquee overflow fix */
+  .marquee-wrap { overflow: hidden !important; }
+
+  /* Remove decorative orbs */
+  .hero-orb { display: none !important; }
+}
+
+@media (max-width: 400px) {
+  .hero h1 { font-size: 28px !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .btn-xl { padding: 13px 18px !important; font-size: 13px !important; }
+}
