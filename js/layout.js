@@ -66,7 +66,7 @@ const FOOTER_HTML = `
     <h2 data-t="cta_h"></h2>
     <div class="cta-banner-actions">
       <a href="contact.html" class="btn btn-primary btn-lg" data-t="contact_cta"></a>
-      <a href="services.html" class="btn btn-ghost btn-lg" data-t="nav_services"></a>
+      <a href="services.html" class="btn btn-ghost btn-lg" data-t="nav_services" style="border:1.5px solid rgba(244,241,237,0.4);padding:14px 28px;"></a>
     </div>
   </div>
 </section>
