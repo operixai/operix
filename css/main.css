@@ -707,3 +707,111 @@ footer {
   /* Footer columns stacked */
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* ── COMPREHENSIVE LAYOUT FIX ── */
+
+/* Equal height cards with flex layout */
+.grid-3, .grid-2 {
+  align-items: stretch !important;
+}
+.card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+.card-price {
+  margin-top: auto !important;
+  padding-top: 20px !important;
+}
+
+/* Center all section CTAs */
+.section > div[style*="justify-content:center"],
+.section > div[style*="justify-content: center"] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Blog cards equal height */
+.blog-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+.blog-card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.blog-card-body .btn {
+  margin-top: auto !important;
+}
+
+/* Pricing cards equal height */
+.pricing-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.pricing-card .btn {
+  margin-top: auto !important;
+}
+
+/* Nav logo consistent */
+.logo img {
+  height: 26px !important;
+  width: auto !important;
+  display: block;
+}
+
+/* Mobile specific */
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr !important; }
+  .grid-2 { grid-template-columns: 1fr !important; }
+  
+  .card { height: auto !important; }
+
+  .nav-links { display: none; }
+
+  /* Hero compact on mobile */
+  .hero { padding: 90px 20px 44px !important; }
+  .hero h1 { font-size: clamp(34px, 9vw, 52px) !important; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* Sections tighter */
+  .section, .section-dark { padding: 44px 20px !important; }
+
+  /* Footer single column */  
+  .footer-top { grid-template-columns: 1fr !important; }
+
+  /* Stats 2 column grid on mobile */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+
+  /* Hide orbs on mobile - they cause gaps */
+  .hero-orb { display: none !important; }
+
+  /* Burger clean */
+  .mobile-menu-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Pricing stack */
+  .pricing-grid { grid-template-columns: 1fr !important; }
+
+  /* Cases stack */
+  .cases-grid { grid-template-columns: 1fr !important; }
+
+  /* Section header stacks */
+  .section-head { flex-direction: column; gap: 16px; }
+  .section-head .btn { width: 100%; text-align: center; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(30px, 8vw, 44px) !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .stat-number { font-size: 32px !important; }
+  .btn-xl { padding: 14px 20px !important; font-size: 14px !important; }
+}
