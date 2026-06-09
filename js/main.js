@@ -1,7 +1,63 @@
 // ── TRANSLATIONS ──
 const T = {
   en: {
-    // NAV
+
+    // SERVICES PAGE HARDCODED
+    svc_page_hero: 'Everything you need to automate your business.',
+    svc_hero_sub: 'From a single chatbot to a full AI infrastructure — we build it, deploy it, and maintain it.',
+    svc_s1_hero: 'Never miss a customer again.',
+    svc_s2_hero: 'Kill the busywork. Keep the results.',
+    svc_s3_hero: 'Your sales pipeline. On autopilot.',
+    svc_s4_hero: 'Data that actually drives decisions.',
+    svc_s5_hero: 'Content that never stops publishing.',
+    svc_s6_hero: 'A digital employee built for your business.',
+    svc_see_cases: 'See case studies',
+
+    // CASES PAGE HARDCODED
+    cases_page_title: 'Case Studies',
+    cases_page_hero: 'Real results. Real businesses.',
+    cases_page_sub: 'How our clients use Operix automation to save time, generate more revenue, and scale without hiring.',
+    case1_title: 'AI Lead Qualification Bot for Real Estate Agency',
+    case2_title: 'Full Customer Support Automation for Online Store',
+    case3_title: 'AI Content Machine for SaaS Marketing Team',
+    case4_title: 'Document Processing Automation for Law Firm',
+    case5_title: 'Multilingual Guest Bot for Dubai Hotel',
+    case5_desc: 'A boutique hotel in Dubai needed multilingual guest communication. We built a Telegram bot handling inquiries, bookings, and room service in English, Russian, and Arabic.',
+
+    // PRICING PAGE HARDCODED
+    pricing_get_started: 'Get Started',
+    pricing_contact_us: 'Contact Us',
+    pricing_retainer_title: 'Monthly Retainers',
+    pricing_retainer_sub: 'Keep your systems sharp.',
+    pricing_retainer_desc: 'Add a monthly retainer to any project for ongoing maintenance, optimization, and expansion.',
+    pricing_maint_title: 'Maintenance',
+    pricing_maint_desc: 'Bug fixes, uptime monitoring, minor updates. We keep your system running perfectly.',
+
+    // ABOUT PAGE HARDCODED
+    about_page_title: 'About Operix',
+    about_hero: 'Built by operators. For operators.',
+    about_mission_title: 'Our Mission',
+    about_mission_desc: 'Operix was founded to close that gap. We bring Silicon Valley-grade AI systems to businesses of every size, at prices that make sense, deployed in days not months.',
+    about_why_title: 'Why Operix',
+    about_why_sub: 'What makes us different.',
+    about_results: 'Results-focused',
+    about_global: 'Global reach',
+
+    // BLOG PAGE HARDCODED
+    blog_hero: 'Insights on AI automation.',
+    blog_sub: 'Practical guides, case studies, and industry analysis for business owners exploring AI.',
+    blog1_title: 'The real ROI of AI automation for small businesses',
+    blog2_title: 'AI automation landscape in CIS markets',
+    blog2_desc: 'An honest analysis of the AI automation landscape in Uzbekistan, Russia, Kazakhstan, and neighboring markets.',
+
+    // BUTTONS
+    btn_read_more: 'Read More →',
+    btn_get_started: 'Get Started',
+    btn_contact_us: 'Contact Us',
+    btn_view_cases: 'View Cases',
+    btn_all_services: 'All Services',
+
+        // NAV
     nav_services: 'Services',
     nav_cases: 'Case Studies',
     nav_pricing: 'Pricing',
@@ -385,7 +441,63 @@ const T = {
   },
 
   ru: {
-    // NAV
+
+    // SERVICES PAGE HARDCODED
+    svc_page_hero: 'Всё необходимое для автоматизации вашего бизнеса.',
+    svc_hero_sub: 'От одного чат-бота до полной AI инфраструктуры — мы строим, деплоим и поддерживаем.',
+    svc_s1_hero: 'Никогда не теряйте клиентов.',
+    svc_s2_hero: 'Уберите рутину. Оставьте результат.',
+    svc_s3_hero: 'Ваш пайплайн продаж — на автопилоте.',
+    svc_s4_hero: 'Данные которые реально помогают решениям.',
+    svc_s5_hero: 'Контент который никогда не останавливается.',
+    svc_s6_hero: 'Цифровой сотрудник для вашего бизнеса.',
+    svc_see_cases: 'Смотреть кейсы',
+
+    // CASES PAGE HARDCODED
+    cases_page_title: 'Кейсы',
+    cases_page_hero: 'Реальные результаты. Реальный бизнес.',
+    cases_page_sub: 'Как наши клиенты используют автоматизацию Operix для экономии времени, роста дохода и масштабирования.',
+    case1_title: 'AI бот квалификации лидов для агентства недвижимости',
+    case2_title: 'Полная автоматизация поддержки для интернет-магазина',
+    case3_title: 'AI контент-машина для маркетинговой команды SaaS',
+    case4_title: 'Автоматизация обработки документов для юридической фирмы',
+    case5_title: 'Многоязычный бот для отеля в Дубае',
+    case5_desc: 'Бутик-отель в Дубае нуждался в многоязычной коммуникации с гостями. Мы создали Telegram-бот для запросов, бронирований и обслуживания номеров на английском, русском и арабском.',
+
+    // PRICING PAGE HARDCODED
+    pricing_get_started: 'Начать',
+    pricing_contact_us: 'Связаться',
+    pricing_retainer_title: 'Ежемесячное обслуживание',
+    pricing_retainer_sub: 'Держите системы в тонусе.',
+    pricing_retainer_desc: 'Добавьте ежемесячное обслуживание к любому проекту для поддержки, оптимизации и развития.',
+    pricing_maint_title: 'Поддержка',
+    pricing_maint_desc: 'Исправление багов, мониторинг, мелкие обновления. Держим систему в идеальном состоянии.',
+
+    // ABOUT PAGE HARDCODED
+    about_page_title: 'О нас',
+    about_hero: 'Созданы практиками. Для практиков.',
+    about_mission_title: 'Наша миссия',
+    about_mission_desc: 'Operix создан чтобы закрыть этот разрыв. Мы внедряем AI системы уровня Кремниевой долины для бизнесов любого размера — по разумным ценам, за дни а не месяцы.',
+    about_why_title: 'Почему Operix',
+    about_why_sub: 'Что делает нас другими.',
+    about_results: 'Фокус на результате',
+    about_global: 'Глобальный охват',
+
+    // BLOG PAGE HARDCODED
+    blog_hero: 'Аналитика об AI автоматизации.',
+    blog_sub: 'Практические руководства, кейсы и отраслевой анализ для владельцев бизнеса.',
+    blog1_title: 'Реальный ROI от AI автоматизации для малого бизнеса',
+    blog2_title: 'AI автоматизация на рынках СНГ',
+    blog2_desc: 'Честный анализ рынка AI автоматизации в Узбекистане, России, Казахстане и соседних странах.',
+
+    // BUTTONS
+    btn_read_more: 'Читать →',
+    btn_get_started: 'Начать',
+    btn_contact_us: 'Связаться',
+    btn_view_cases: 'Смотреть кейсы',
+    btn_all_services: 'Все услуги',
+
+        // NAV
     nav_services: 'Услуги',
     nav_cases: 'Кейсы',
     nav_pricing: 'Цены',
