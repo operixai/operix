@@ -139,8 +139,8 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 }
 .hero h1 .accent { color: var(--accent); }
 .hero h1 .stroke {
-  -webkit-text-stroke: 0px rgba(244,241,237,0.3);
-  color: transparent;
+  -webkit-text-stroke: 0;
+  color: rgba(244,241,237,0.45);
 }
 
 .hero-sub {
