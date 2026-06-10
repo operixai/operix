@@ -357,3 +357,18 @@ a, button, .btn, .lang-btn, .mobile-menu-btn{
       linear-gradient(135deg,#191817,#2a241f 55%,#151515)!important;
   }
 }
+
+
+/* HQ video final mobile override */
+@media(max-width:780px){
+  .opx-video-inner{
+    aspect-ratio:16/9!important;
+    min-height:unset!important;
+    height:auto!important;
+  }
+  .opx-video-copy,
+  .opx-video-badge,
+  .opx-video-shade{
+    display:none!important;
+  }
+}

@@ -1,0 +1,69 @@
+/* Operix HQ video quality fix.
+   Full HD 1920x1080 videos, exact 16:9, no text overlay, no crop/sizing bug.
+*/
+
+.opx-video-panel{
+  max-width:1200px!important;
+  margin:42px auto 86px!important;
+  padding:0 32px!important;
+}
+
+.opx-video-inner{
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  min-height:unset!important;
+  height:auto!important;
+  border-radius:28px!important;
+  overflow:hidden!important;
+  position:relative!important;
+  background:var(--ivory-2)!important;
+  border:1px solid rgba(21,21,21,.10)!important;
+  box-shadow:0 28px 80px rgba(21,21,21,.10)!important;
+}
+
+.opx-motion-video{
+  display:block!important;
+  position:relative!important;
+  inset:auto!important;
+  z-index:1!important;
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:16/9!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+
+/* Remove all text and shade over videos */
+.opx-video-copy,
+.opx-video-badge,
+.opx-video-shade,
+.opx-video-inner::before,
+.opx-video-inner::after,
+.opx-orbit,
+.opx-flow{
+  display:none!important;
+}
+
+.page-header + .opx-video-panel,
+.clean-hero + .opx-video-panel{
+  margin-top:12px!important;
+}
+
+@media(max-width:780px){
+  .opx-video-panel{
+    padding:0 20px!important;
+    margin:18px auto 54px!important;
+  }
+  .opx-video-inner{
+    border-radius:22px!important;
+    aspect-ratio:16/9!important;
+    min-height:unset!important;
+  }
+}
+
+@media(max-width:390px){
+  .opx-video-panel{padding:0 16px!important}
+  .opx-video-inner{border-radius:20px!important}
+}
