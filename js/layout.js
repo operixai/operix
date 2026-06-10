@@ -23,7 +23,7 @@
   if (!document.querySelector('link[href*="css/refine.css"]')) {
     const refine = document.createElement('link');
     refine.rel = 'stylesheet';
-    refine.href = 'css/refine.css?v=20260610-smoothhq1';
+    refine.href = 'css/refine.css?v=20260610-loopfix1';
     head.appendChild(refine);
   }
 
@@ -31,8 +31,24 @@
   if (!document.querySelector('link[href*="css/mobile-smooth.css"]')) {
     const mobile = document.createElement('link');
     mobile.rel = 'stylesheet';
-    mobile.href = 'css/mobile-smooth.css?v=20260610-mobile1';
+    mobile.href = 'css/mobile-smooth.css?v=20260610-loopfix1';
     head.appendChild(mobile);
+  }
+
+
+  if (!document.querySelector('link[href*="css/motion-loopfix.css"]')) {
+    const loopfix = document.createElement('link');
+    loopfix.rel = 'stylesheet';
+    loopfix.href = 'css/motion-loopfix.css?v=20260610-loopfix1';
+    head.appendChild(loopfix);
+  }
+
+
+  if (!document.querySelector('link[href*="css/video-autoplay-loop.css"]')) {
+    const videoAuto = document.createElement('link');
+    videoAuto.rel = 'stylesheet';
+    videoAuto.href = 'css/video-autoplay-loop.css?v=20260610-autoplayloop1';
+    head.appendChild(videoAuto);
   }
 
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
@@ -44,7 +60,7 @@
 
   if (!document.querySelector('script[src*="js/video-motion.js"]')) {
     const motion = document.createElement('script');
-    motion.src = 'js/video-motion.js?v=20260610-smoothhq1';
+    motion.src = 'js/video-motion.js?v=20260610-autoplayloop1';
     motion.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motion));
   }
@@ -52,7 +68,7 @@
 
   if (!document.querySelector('script[src*="js/mobile-smooth.js"]')) {
     const mobileScript = document.createElement('script');
-    mobileScript.src = 'js/mobile-smooth.js?v=20260610-mobile1';
+    mobileScript.src = 'js/mobile-smooth.js?v=20260610-autoplayloop1';
     mobileScript.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(mobileScript));
   }

@@ -12,9 +12,11 @@
       video.setAttribute('playsinline', '');
       video.setAttribute('muted', '');
       video.setAttribute('loop', '');
+      video.setAttribute('preload', 'auto');
+      video.removeAttribute('poster');
 
       if (prefersReduced()) {
-        video.pause();
+        if (isSmall()) if (isSmall()) video.pause();
         return;
       }
 
@@ -26,10 +28,10 @@
               const p = video.play();
               if (p && p.catch) p.catch(()=>{});
             } else if (isSmall()) {
-              video.pause();
+              if (isSmall()) if (isSmall()) video.pause();
             }
           });
-        }, { threshold: 0.18 });
+        }, { threshold: 0.01, rootMargin: '420px 0px 420px 0px' });
         io.observe(video);
       } else {
         const p = video.play();
