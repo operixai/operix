@@ -1,0 +1,32 @@
+/* Operix video autoplay loop-only fix.
+   No posters/images in motion panels. The visible media is the MP4 video.
+*/
+
+.opx-motion-video{
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  background:transparent!important;
+}
+
+.opx-video-inner{
+  background:var(--ivory-2)!important;
+}
+
+.opx-video-inner img,
+.opx-video-inner picture{
+  display:none!important;
+}
+
+/* Keep overlay text above the video, not inside it */
+.opx-video-badge,
+.opx-video-copy,
+.opx-video-shade{
+  pointer-events:none;
+}
+
+@media(max-width:780px){
+  .opx-motion-video{
+    display:block!important;
+  }
+}
