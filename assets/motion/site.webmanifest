@@ -1,0 +1,19 @@
+{
+  "name": "Operix",
+  "short_name": "Operix",
+  "icons": [
+    {
+      "src": "/operix/operix-tab-icon-192.png?v=20260610-hard4",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/operix/operix-tab-icon-512.png?v=20260610-hard4",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#faf9f5",
+  "background_color": "#faf9f5",
+  "display": "standalone"
+}
