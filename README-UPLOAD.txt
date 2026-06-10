@@ -1,15 +1,25 @@
-OPERIX SMOOTH HQ MOTION PACK
+OPERIX SEAMLESS HQ MOTION
 
-База: твой ZIP operix-mp4-motion-mobile-ready, где motion-логика была нормальная.
+База:
+- Взял именно твой прикреплённый ZIP: operix-mp4-motion-mobile-ready.
 
 Что исправлено:
-- Пересобраны все motion MP4 в 1920×1080 Full HD.
-- FPS поднят до 60 для более плавного движения.
-- Текст внутри самих видео убран полностью.
-- Overlay-текст остаётся HTML поверх видео и переводится RU/EN через js/video-motion.js.
-- Фон видео сделан чище: warm cream / dark warm / terra-cotta, без странного грязного фона.
-- Видео ровно лежит в блоке: desktop 16:9, mobile 4:5.
-- На каждой странице разная анимация: home/services/pricing/cases/about/contact.
+1. Оставлена старая рабочая логика MP4 motion-блоков.
+2. Overlay-текст остаётся HTML поверх видео и переводится RU/EN.
+3. Текст внутри самих видео убран полностью.
+4. Видео пересобраны заново:
+   - 1920×1080
+   - 60 FPS
+   - 4 секунды
+   - loop-friendly motion через sin/cos, без резкого reset в конце
+5. Фон стал чище: warm cream / dark warm / terra-cotta.
+6. Desktop и mobile получают новые версии через cache-busting seamless1.
+7. Mobile остаётся 4:5, desktop 16:9.
+
+Почему раньше дёргалось:
+- старые видео были 640×360 / 18 FPS;
+- часть движений имела reset, поэтому браузер резко прыгал с последнего кадра на первый;
+- desktop мог держать старый JS/CSS из кеша, пока mobile показывал новое.
 
 Как залить:
 1. Распакуй ZIP.
@@ -18,12 +28,21 @@ OPERIX SMOOTH HQ MOTION PACK
 4. Перетащи ВСЁ содержимое архива в корень repo.
 5. Согласись на Replace existing files.
 6. Commit message:
-   Upgrade MP4 motion to smooth Full HD
+   Add seamless 1080p 60fps motion videos
 7. Проверка:
-   https://operixai.github.io/operix/?v=smoothhq1
+   https://operixai.github.io/operix/?v=seamless1
 
-Если видишь старое видео:
-- Incognito
-- Ctrl+F5
-- проверь напрямую:
-  https://operixai.github.io/operix/assets/motion/home.mp4?v=smoothhq1
+Если на ПК старая версия, а на телефоне новая:
+- это desktop cache.
+- открой Incognito или DevTools → Network → Disable cache → Ctrl+F5.
+- прямой тест:
+  https://operixai.github.io/operix/assets/motion/home.mp4?v=seamless1
+
+Видео:
+
+about.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
+cases.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
+contact.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
+home.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
+pricing.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
+services.mp4: 1920 / 1080 / 60/1 / 60/1 / 4.000000 / 240
