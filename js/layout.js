@@ -19,26 +19,12 @@
     head.appendChild(clean);
   }
 
-  if (!document.querySelector('link[href*="css/polish.css"]')) {
-    const polish = document.createElement('link');
-    polish.rel = 'stylesheet';
-    polish.href = 'css/polish.css?v=20260610-polish1';
-    head.appendChild(polish);
-  }
 
-
-  if (!document.querySelector('link[href*="css/polish.css"]')) {
-    const polish = document.createElement('link');
-    polish.rel = 'stylesheet';
-    polish.href = 'css/polish.css?v=20260610-polish1';
-    head.appendChild(polish);
-  }
-
-  if (!document.querySelector('link[href*="css/anthropic-motion.css"]')) {
-    const motionCss = document.createElement('link');
-    motionCss.rel = 'stylesheet';
-    motionCss.href = 'css/anthropic-motion.css?v=20260610-motion1';
-    head.appendChild(motionCss);
+  if (!document.querySelector('link[href*="css/refine.css"]')) {
+    const refine = document.createElement('link');
+    refine.rel = 'stylesheet';
+    refine.href = 'css/refine.css?v=20260610-refine1';
+    head.appendChild(refine);
   }
 
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
@@ -48,25 +34,11 @@
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(script));
   }
 
-  if (!document.querySelector('script[src*="js/polish.js"]')) {
-    const polishScript = document.createElement('script');
-    polishScript.src = 'js/polish.js?v=20260610-polish1';
-    polishScript.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(polishScript));
-  }
-
-  if (!document.querySelector('script[src*="js/polish.js"]')) {
-    const polishScript = document.createElement('script');
-    polishScript.src = 'js/polish.js?v=20260610-polish1';
-    polishScript.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(polishScript));
-  }
-
-  if (!document.querySelector('script[src*="js/anthropic-motion.js"]')) {
-    const motionScript = document.createElement('script');
-    motionScript.src = 'js/anthropic-motion.js?v=20260610-motion1';
-    motionScript.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motionScript));
+  if (!document.querySelector('script[src*="js/video-motion.js"]')) {
+    const motion = document.createElement('script');
+    motion.src = 'js/video-motion.js?v=20260610-refine1';
+    motion.defer = true;
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motion));
   }
 
 })();
