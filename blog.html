@@ -3,92 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Operix — AI Automation Agency">
 <title>Blog — Operix</title>
-<link rel="stylesheet" href="css/main.css?v=11">
-<style>
-.blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.blog-card { background:var(--gray); border:1px solid var(--border); border-radius:14px; overflow:hidden; transition:all 0.25s; cursor:pointer; }
-.blog-card:hover { border-color:rgba(232,255,71,0.2); transform:translateY(-2px); }
-.blog-card-img { height:180px; background:var(--gray2); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.blog-card-img-inner { font-family:'Syne',sans-serif; font-weight:800; font-size:64px; letter-spacing:-3px; color:rgba(232,255,71,0.08); }
-.blog-card-body { padding:28px; }
-.blog-tag { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-family:'Syne',sans-serif; font-weight:600; margin-bottom:10px; display:block; }
-.blog-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:18px; letter-spacing:-0.3px; line-height:1.25; margin-bottom:10px; }
-.blog-card p { font-size:13px; color:var(--muted); line-height:1.65; }
-.blog-meta { display:flex; align-items:center; justify-content:space-between; margin-top:16px; font-size:12px; color:var(--muted); }
-@media(max-width:768px){ .blog-grid{ grid-template-columns:1fr; } }
-</style>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css?v=12">
+<link rel="stylesheet" href="css/fixes.css?v=20260610-clean2">
+<link rel="stylesheet" href="css/content-clean.css?v=20260610-clean2">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="nav-placeholder"></div>
-<div class="page-header">
-  <span class="label">Blog</span>
-  <h1><span data-t="blog_h1"></span></h1>
-  <p><span data-t="blog_p1"></span></p>
-</div>
-<section class="section">
-  <div class="blog-grid">
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">AI</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Guide</span>
-        <h3><span data-t="blog1_h"></span></h3>
-        <p>A step-by-step breakdown of how we take a business from manual tickets to 80% automated in under a week.</p>
-        <div class="blog-meta"><span>Jun 2026</span><span><span data-t="blog1_min"></span></span></div>
-      </div>
-    </div>
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">ROI</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Analysis</span>
-        <h3><span data-t="blog2_h"></span></h3>
-        <p>We analyzed 20 client projects and calculated the actual return on investment from AI automation. The numbers are surprising.</p>
-        <div class="blog-meta"><span>May 2026</span><span><span data-t="blog2_min"></span></span></div>
-      </div>
-    </div>
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">RE</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Industry</span>
-        <h3><span data-t="blog3_h"></span></h3>
-        <p>Lead qualification, appointment scheduling, follow-ups — the AI workflows transforming real estate agencies globally.</p>
-        <div class="blog-meta"><span>May 2026</span><span><span data-t="blog3_min"></span></span></div>
-      </div>
-    </div>
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">BOT</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Tutorial</span>
-        <h3><span data-t="blog4_h"></span></h3>
-        <p>A practical comparison of both platforms for business automation — features, costs, and which to choose for your use case.</p>
-        <div class="blog-meta"><span>Apr 2026</span><span><span data-t="blog4_min"></span></span></div>
-      </div>
-    </div>
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">$$$</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Business</span>
-        <h3><span data-t="blog5_h"></span></h3>
-        <p>The highest-ROI automation opportunities for online stores — ranked by impact and ease of implementation.</p>
-        <div class="blog-meta"><span>Apr 2026</span><span><span data-t="blog3_min"></span></span></div>
-      </div>
-    </div>
-    <div class="blog-card anim">
-      <div class="blog-card-img"><div class="blog-card-img-inner">CIS</div></div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Market</span>
-        <h3>AI adoption in CIS markets: where the opportunity is in 2026</h3>
-        <p>An honest analysis of the AI automation landscape in Uzbekistan, Russia, Kazakhstan, and neighboring markets.</p>
-        <div class="blog-meta"><span>Mar 2026</span><span>9 min read</span></div>
-      </div>
-    </div>
+
+<header class="page-header">
+  <span class="label" data-p="blog_kicker"></span>
+  <h1 data-p="blog_h1"></h1>
+  <p data-p="blog_sub"></p>
+</header>
+<section class="clean-wrap" style="padding-top:0">
+  <div class="clean-note"><span data-p="blog_note"></span></div>
+</section>
+<section class="clean-wrap">
+  <div class="clean-grid-3">
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog1_t"></h3><p data-p="blog1_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog2_t"></h3><p data-p="blog2_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog3_t"></h3><p data-p="blog3_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog4_t"></h3><p data-p="blog4_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog5_t"></h3><p data-p="blog5_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
+    <article class="playbook-card anim"><span class="clean-pill">Playbook</span><h3 data-p="blog6_t"></h3><p data-p="blog6_p"></p><span class="playbook-status" data-p="blog_status"></span></article>
   </div>
 </section>
 <div id="footer-placeholder"></div>
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
+<script src="js/layout.js?v=20260610-clean2"></script>
+<script src="js/main.js?v=11"></script>
+<script src="js/page-copy.js?v=20260610-clean2"></script>
 </body>
 </html>

@@ -3,442 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Operix — AI Automation Agency">
 <title>Contact — Operix</title>
-<link rel="stylesheet" href="css/main.css?v=11">
-<style>
-.contact-ways {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  margin-bottom: 80px;
-}
-.contact-way {
-  background: var(--gray);
-  padding: 44px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: background 0.25s;
-  text-decoration: none;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-.contact-way::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: left;
-}
-.contact-way:hover { background: var(--gray2); }
-.contact-way:hover::before { transform: scaleX(1); }
-.contact-way-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 11px; letter-spacing: 2px;
-  color: var(--muted2);
-}
-.contact-way-icon {
-  width: 52px; height: 52px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--gray2);
-  transition: all 0.25s;
-}
-.contact-way:hover .contact-way-icon {
-  border-color: rgba(232,255,71,0.3);
-  background: rgba(232,255,71,0.06);
-}
-.contact-way-icon svg { width: 22px; height: 22px; stroke: var(--accent); }
-.contact-way h3 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700; font-size: 20px; letter-spacing: -0.3px;
-}
-.contact-way p { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
-.contact-way-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; color: var(--accent);
-  font-family: 'Syne', sans-serif; font-weight: 600;
-}
-.contact-way-link svg { width: 14px; height: 14px; stroke: var(--accent); }
-
-.form-section {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 80px;
-  align-items: start;
-}
-.form-info { position: sticky; top: 100px; }
-.form-info h2 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(26px, 3vw, 40px);
-  letter-spacing: -1.5px; line-height: 1.05;
-  margin-bottom: 16px;
-}
-.form-info p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
-
-.guarantee-box {
-  display: flex; flex-direction: column; gap: 12px;
-  padding: 24px; border: 1px solid var(--border);
-  border-radius: 12px; background: var(--gray);
-  margin-bottom: 20px;
-}
-.guarantee-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 13px; color: rgba(244,241,237,0.65); line-height: 1.5;
-}
-.guarantee-item svg { width: 14px; height: 14px; stroke: var(--accent); flex-shrink: 0; margin-top: 2px; }
-
-.team-badge {
-  display: flex; align-items: center; gap: 12px;
-  padding: 18px 20px; border: 1px solid var(--border);
-  border-radius: 12px;
-}
-.team-avatar {
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--gray2);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 700; flex-shrink: 0;
-}
-.online-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #4ade80; animation: blink 2s infinite;
-}
-
-.form-card {
-  background: var(--gray);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-}
-.form-card-header {
-  padding: 32px 40px 28px;
-  border-bottom: 1px solid var(--border);
-  background: var(--gray2);
-}
-.form-card-header h3 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700; font-size: 20px;
-  letter-spacing: -0.3px; margin-bottom: 6px;
-}
-.form-card-header p { font-size: 13px; color: var(--muted); }
-.form-card-body { padding: 36px 40px; display: flex; flex-direction: column; gap: 16px; }
-
-.success-state {
-  display: none;
-  flex-direction: column; align-items: center;
-  text-align: center; padding: 60px 40px; gap: 16px;
-}
-.success-icon {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.25);
-  display: flex; align-items: center; justify-content: center;
-}
-.success-icon svg { width: 32px; height: 32px; stroke: #4ade80; }
-.success-state h3 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: 24px; letter-spacing: -0.5px;
-}
-.success-state p { font-size: 15px; color: var(--muted); max-width: 320px; line-height: 1.6; }
-
-.form-privacy {
-  margin-top: 8px; text-align: center;
-  font-size: 11px; color: rgba(244,241,237,0.2);
-  display: flex; align-items: center; justify-content: center; gap: 5px;
-}
-.form-privacy svg { width: 11px; height: 11px; stroke: rgba(244,241,237,0.2); }
-
-/* Steps hint */
-.setup-hint {
-  background: rgba(232,255,71,0.04);
-  border: 1px solid rgba(232,255,71,0.15);
-  border-radius: 12px; padding: 20px 24px;
-  margin-bottom: 48px;
-  display: flex; align-items: flex-start; gap: 14px;
-}
-.setup-hint-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(232,255,71,0.1);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.setup-hint-icon svg { width: 14px; height: 14px; stroke: var(--accent); }
-.setup-hint p { font-size: 13px; color: rgba(244,241,237,0.6); line-height: 1.6; }
-.setup-hint strong { color: var(--accent); font-weight: 600; }
-
-@media (max-width: 900px) {
-  .contact-ways { grid-template-columns: 1fr; }
-  .form-section { grid-template-columns: 1fr; gap: 40px; }
-  .form-info { position: static; }
-  .form-card-header { padding: 24px; }
-  .form-card-body { padding: 24px; }
-}
-</style>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css?v=12">
+<link rel="stylesheet" href="css/fixes.css?v=20260610-clean2">
+<link rel="stylesheet" href="css/content-clean.css?v=20260610-clean2">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="nav-placeholder"></div>
 
-<div class="page-header">
-  <span class="label" data-t="nav_contact"></span>
-  <h1 data-t="contact_title"></h1>
-  <p data-t="contact_sub"></p>
-</div>
-
-<!-- 3 WAYS -->
-<section class="section" style="padding-bottom:0">
-  <span class="label" data-t="contact_ways_label"></span>
-  <h2 class="section-title" style="margin-bottom:48px" data-t="contact_ways_title"></h2>
-  <div class="contact-ways">
-
-    <a href="https://t.me/exyysdof" target="_blank" class="contact-way haptic-medium">
-      <div class="contact-way-num">01</div>
-      <div class="contact-way-icon"><svg><use href="#i-tg"/></svg></div>
-      <h3 data-t="way1_title"></h3>
-      <p data-t="way1_desc"></p>
-      <span class="contact-way-link">
-        @exyysdof
-        <svg><use href="#i-arrow-right"/></svg>
-      </span>
-    </a>
-
-    <a href="mailto:travisofwork@gmail.com" class="contact-way haptic-medium">
-      <div class="contact-way-num">02</div>
-      <div class="contact-way-icon"><svg><use href="#i-mail"/></svg></div>
-      <h3 data-t="way2_title"></h3>
-      <p data-t="way2_desc"></p>
-      <span class="contact-way-link">
-        travisofwork@gmail.com
-        <svg><use href="#i-arrow-right"/></svg>
-      </span>
-    </a>
-
-    <div class="contact-way haptic-light" onclick="document.getElementById('lead-form-section').scrollIntoView({behavior:'smooth'});haptic('medium')">
-      <div class="contact-way-num">03</div>
-      <div class="contact-way-icon"><svg><use href="#i-send"/></svg></div>
-      <h3 data-t="way3_title"></h3>
-      <p data-t="way3_desc"></p>
-      <span class="contact-way-link">
-        <span data-t="way3_link"></span>
-        <svg><use href="#i-arrow-right"/></svg>
-      </span>
+<header class="page-header">
+  <span class="label" data-p="contact_kicker"></span>
+  <h1 data-p="contact_h1"></h1>
+  <p data-p="contact_sub"></p>
+</header>
+<section class="clean-wrap">
+  <div class="contact-clean-grid">
+    <aside class="contact-card anim">
+      <span class="clean-kicker" data-p="contact_left_h"></span>
+      <p data-p="contact_left_p"></p>
+      <ul class="clean-list">
+        <li data-p="contact_b1"></li>
+        <li data-p="contact_b2"></li>
+        <li data-p="contact_b3"></li>
+        <li data-p="contact_b4"></li>
+        <li data-p="contact_b5"></li>
+      </ul>
+      <div class="clean-actions">
+        <a href="https://t.me/exyysdof" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Telegram @exyysdof</a>
+        <a href="mailto:travisofwork@gmail.com" class="btn btn-ghost">Email</a>
+      </div>
+    </aside>
+    <div class="contact-card anim">
+      <h2 style="font-size:clamp(28px,3.2vw,44px)" data-p="contact_form_h"></h2>
+      <p data-p="contact_form_p"></p>
+      <form id="lead-form" class="contact-form">
+        <div class="form-row-clean">
+          <div class="form-group-clean"><label class="form-label" data-p="contact_name"></label><input class="form-input" type="text" name="name" required></div>
+          <div class="form-group-clean"><label class="form-label" data-p="contact_email"></label><input class="form-input" type="email" name="email" required></div>
+        </div>
+        <div class="form-row-clean">
+          <div class="form-group-clean"><label class="form-label" data-p="contact_company"></label><input class="form-input" type="text" name="company"></div>
+          <div class="form-group-clean"><label class="form-label" data-p="contact_budget"></label><select class="form-select" name="budget"><option value="">—</option><option>$300 – $500</option><option>$500 – $1,000</option><option>$1,000 – $3,000</option><option>$3,000+</option></select></div>
+        </div>
+        <div class="form-group-clean"><label class="form-label" data-p="contact_service"></label><select class="form-select" name="service"><option>AI Customer Support</option><option>Workflow Automation</option><option>AI Lead Generation</option><option>AI Analytics</option><option>AI Content Machine</option><option>Custom AI Agent</option><option>Not sure yet</option></select></div>
+        <div class="form-group-clean"><label class="form-label" data-p="contact_message"></label><textarea class="form-textarea" name="message" rows="5" required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn"><svg width="16" height="16"><use href="#i-send"/></svg><span id="submit-text" data-p="contact_send"></span></button>
+        <p class="form-hint" data-p="contact_privacy"></p>
+      </form>
+      <div class="success-state-clean" id="success-state">
+        <h3 data-p="contact_success_h"></h3>
+        <p data-p="contact_success_p"></p>
+      </div>
     </div>
-
   </div>
 </section>
-
-<!-- LEAD FORM -->
-<section class="section" id="lead-form-section">
-  <div class="form-section">
-
-    <!-- LEFT -->
-    <div class="form-info anim">
-      <span class="label" data-t="form_label"></span>
-      <h2 data-t="form_title"></h2>
-      <p data-t="form_sub"></p>
-
-      <div class="guarantee-box">
-        <span class="label" style="margin-bottom:4px" data-t="contact_audit_label"></span>
-        <div class="guarantee-item"><svg><use href="#i-check"/></svg><span data-t="contact_a1"></span></div>
-        <div class="guarantee-item"><svg><use href="#i-check"/></svg><span data-t="contact_a2"></span></div>
-        <div class="guarantee-item"><svg><use href="#i-check"/></svg><span data-t="contact_a3"></span></div>
-        <div class="guarantee-item"><svg><use href="#i-check"/></svg><span data-t="contact_a4"></span></div>
-        <div class="guarantee-item"><svg><use href="#i-check"/></svg><span data-t="contact_a5"></span></div>
-      </div>
-
-      <div class="team-badge">
-        <div class="team-avatar">OP</div>
-        <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px">Operix Team</div>
-          <div style="font-size:12px;color:var(--muted)" data-t="contact_hours"></div>
-        </div>
-        <div style="margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px;color:#4ade80">
-          <span class="online-dot"></span>
-          <span data-t="contact_online"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT: FORM CARD -->
-    <div class="form-card anim">
-      <div class="form-card-header">
-        <h3 data-t="form_card_title"></h3>
-        <p data-t="form_card_sub"></p>
-      </div>
-
-      <div class="form-card-body" id="form-wrapper">
-        <form id="lead-form" style="display:flex;flex-direction:column;gap:16px">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" data-t="contact_name"></label>
-              <input class="form-input" type="text" name="name" required data-t="contact_name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-t="contact_email"></label>
-              <input class="form-input" type="email" name="email" required data-t="contact_email">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" data-t="contact_company"></label>
-              <input class="form-input" type="text" name="company" data-t="contact_company">
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-t="form_budget_label"></label>
-              <select class="form-select" name="budget">
-                <option value="">—</option>
-                <option>$300 – $500</option>
-                <option>$500 – $1,000</option>
-                <option>$1,000 – $3,000</option>
-                <option>$3,000+</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-t="contact_service"></label>
-            <select class="form-select" name="service" id="service-select">
-              <option value="">—</option>
-              <option class="opt-s1">AI Customer Support Bot</option>
-              <option class="opt-s2">Workflow Automation</option>
-              <option class="opt-s3">AI Lead Generation</option>
-              <option class="opt-s4">AI Analytics</option>
-              <option class="opt-s5">AI Content Machine</option>
-              <option class="opt-s6">Custom AI Agent</option>
-              <option class="opt-ns">Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-t="contact_message"></label>
-            <textarea class="form-textarea" name="message" rows="4" required data-t="contact_message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" style="width:100%;justify-content:center;gap:10px">
-            <svg width="16" height="16"><use href="#i-send"/></svg>
-            <span id="submit-text" data-t="contact_send"></span>
-          </button>
-          <div class="form-privacy">
-            <svg><use href="#i-shield"/></svg>
-            <span data-t="form_privacy_note"></span>
-          </div>
-        </form>
-
-        <!-- SUCCESS -->
-        <div class="success-state" id="success-state">
-          <div class="success-icon"><svg><use href="#i-check"/></svg></div>
-          <h3 data-t="form_success_title"></h3>
-          <p data-t="form_success_sub"></p>
-          <a href="index.html" class="btn btn-ghost btn-lg" data-t="form_success_btn"></a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <div id="footer-placeholder"></div>
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
+<script src="js/layout.js?v=20260610-clean2"></script>
+<script src="js/main.js?v=11"></script>
+<script src="js/page-copy.js?v=20260610-clean2"></script>
 <script>
-// ═══════════════════════════════════════════════
-// GOOGLE SHEETS INTEGRATION
-// ═══════════════════════════════════════════════
-// Шаг 1: sheets.google.com → создай таблицу "Operix Leads"
-//        Заголовки строки 1: Дата | Имя | Email | Компания | Бюджет | Услуга | Сообщение
-//
-// Шаг 2: Расширения → Apps Script → вставь код ниже → Сохранить
-//
-//   function doPost(e) {
-//     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-//     const d = JSON.parse(e.postData.contents);
-//     sheet.appendRow([new Date().toLocaleString('ru-RU'), d.name, d.email, d.company, d.budget, d.service, d.message]);
-//     return ContentService.createTextOutput(JSON.stringify({status:'ok'})).setMimeType(ContentService.MimeType.JSON);
-//   }
-//
-// Шаг 3: Развернуть → Новое развёртывание → Веб-приложение
-//         Выполнять как: Я | Доступ: Все → Развернуть → скопируй URL
-//
-// Шаг 4: Вставь URL сюда ↓
 const FORMSPREE_URL = 'https://formspree.io/f/mwvjowed';
-
 document.addEventListener('DOMContentLoaded', () => {
-  const form      = document.getElementById('lead-form');
-  const success   = document.getElementById('success-state');
+  const form = document.getElementById('lead-form');
+  const success = document.getElementById('success-state');
   const submitBtn = document.getElementById('submit-btn');
   const submitTxt = document.getElementById('submit-text');
-
   if (!form) return;
 
-  // Translate service options
-  const serviceOpts = {
-    's1': { en: 'AI Customer Support Bot', ru: 'AI Поддержка клиентов' },
-    's2': { en: 'Workflow Automation',      ru: 'Автоматизация процессов' },
-    's3': { en: 'AI Lead Generation',       ru: 'AI Генерация лидов' },
-    's4': { en: 'AI Analytics',             ru: 'AI Аналитика' },
-    's5': { en: 'AI Content Machine',       ru: 'AI Контент-машина' },
-    's6': { en: 'Custom AI Agent',          ru: 'Кастомный AI агент' },
-    'ns': { en: 'Not sure yet',             ru: 'Пока не знаю' },
-  };
-  function translateOpts() {
-    const l = localStorage.getItem('operix_lang') || 'en';
-    Object.entries(serviceOpts).forEach(([key, vals]) => {
-      const opt = document.querySelector('.opt-' + key);
-      if (opt) opt.textContent = vals[l] || vals.en;
-    });
-  }
-  setTimeout(translateOpts, 100);
-  document.querySelectorAll('.lang-btn').forEach(b =>
-    b.addEventListener('click', () => setTimeout(translateOpts, 60))
-  );
-
-  // FORM SUBMIT
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const lang = localStorage.getItem('operix_lang') || 'en';
-
+    const lang = localStorage.getItem('operix_lang') === 'ru' ? 'ru' : 'en';
+    const original = submitTxt.textContent;
     submitBtn.disabled = true;
     submitTxt.textContent = lang === 'ru' ? 'Отправляем...' : 'Sending...';
-    if (navigator.vibrate) navigator.vibrate([10, 40, 80]);
+    if (navigator.vibrate) navigator.vibrate([10,40,70]);
 
-    const payload = {
-      name:    form.querySelector('[name="name"]').value.trim(),
-      email:   form.querySelector('[name="email"]').value.trim(),
-      company: form.querySelector('[name="company"]').value.trim() || '—',
-      budget:  form.querySelector('[name="budget"]').value || '—',
-      service: form.querySelector('[name="service"]').value || '—',
-      message: form.querySelector('[name="message"]').value.trim(),
-    };
-
+    const payload = Object.fromEntries(new FormData(form).entries());
     try {
       const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'flex';
-        if (navigator.vibrate) navigator.vibrate([15, 30, 15, 30, 80]);
-      } else {
-        throw new Error('Failed');
-      }
+      if (!res.ok) throw new Error('Formspree failed');
+      form.style.display = 'none';
+      success.style.display = 'block';
+      if (navigator.vibrate) navigator.vibrate([15,30,15,30,80]);
     } catch (err) {
       submitBtn.disabled = false;
-      submitTxt.textContent = lang === 'ru' ? 'Отправить' : 'Send Message';
-      let errEl = document.getElementById('form-error');
-      if (!errEl) {
-        errEl = document.createElement('p');
-        errEl.id = 'form-error';
-        errEl.style.cssText = 'color:#ff6b6b;font-size:13px;margin-top:12px;text-align:center;';
-        submitBtn.parentNode.appendChild(errEl);
+      submitTxt.textContent = original || (lang === 'ru' ? 'Отправить' : 'Send message');
+      let error = document.getElementById('form-error');
+      if (!error) {
+        error = document.createElement('p');
+        error.id = 'form-error';
+        error.className = 'form-hint';
+        error.style.color = '#b91c1c';
+        form.appendChild(error);
       }
-      errEl.textContent = lang === 'ru'
-        ? 'Ошибка. Напишите нам: travisofwork@gmail.com'
-        : 'Failed. Email us: travisofwork@gmail.com';
+      error.textContent = OPX_PAGE_COPY[lang].contact_error;
     }
   });
 });

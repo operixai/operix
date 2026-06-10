@@ -3,118 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies — Operix</title>
-<link rel="stylesheet" href="css/main.css?v=11">
-<style>
-.case-card {
-  background:var(--gray); border:1px solid var(--border); border-radius:16px;
-  padding:44px; transition:all 0.25s; cursor:pointer;
-}
-.case-card:hover { background:var(--gray2); border-color:rgba(232,255,71,0.2); transform:translateY(-2px); }
-.case-tag {
-  display:inline-block; border:1px solid var(--border);
-  padding:4px 12px; border-radius:6px; font-size:11px;
-  font-family:'Syne',sans-serif; font-weight:600; letter-spacing:1px;
-  text-transform:uppercase; color:var(--muted); margin-bottom:20px;
-}
-.case-result {
-  display:flex; gap:24px; margin-top:24px; padding-top:24px;
-  border-top:1px solid var(--border);
-}
-.case-metric { }
-.case-metric-num {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size:28px; letter-spacing:-1px; color:var(--accent);
-}
-.case-metric-label { font-size:11px; color:var(--muted); margin-top:2px; }
-.cases-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-@media(max-width:768px){ .cases-grid{ grid-template-columns:1fr; } .case-result{ flex-wrap:wrap; gap:16px; } }
-</style>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<meta name="description" content="Operix — AI Automation Agency">
+<title>Demo Workflows — Operix</title>
+<link rel="stylesheet" href="css/main.css?v=12">
+<link rel="stylesheet" href="css/fixes.css?v=20260610-clean2">
+<link rel="stylesheet" href="css/content-clean.css?v=20260610-clean2">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="nav-placeholder"></div>
-<div class="page-header">
-  <span class="label">Case Studies</span>
-  <h1 data-t="cases_h1"></h1>
-  <p><span data-t="cases_sub"></span></p>
-</div>
 
-<section class="section">
-  <div class="cases-grid">
-    <div class="case-card anim">
-      <div class="case-tag"><span data-t="case_tag1"></span></div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">AI Lead Qualification Bot for Real Estate Agency</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A mid-size real estate agency in Texas was missing leads that came in outside business hours. We built an AI bot that qualifies prospects, answers property questions, and schedules viewings — 24/7.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">40%</div><div class="case-metric-label"><span data-t="case_m1"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">2min</div><div class="case-metric-label"><span data-t="case_m2"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">$400</div><div class="case-metric-label">Setup cost</div></div>
-      </div>
-    </div>
-    <div class="case-card anim">
-      <div class="case-tag"><span data-t="case_tag2"></span></div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">Full Customer Support Automation for Online Store</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A UK-based fashion brand was spending 30 hours/week on customer support emails. We automated 80% of tickets using AI — order status, returns, sizing questions — all handled instantly.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">80%</div><div class="case-metric-label"><span data-t="case_m4"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">30h</div><div class="case-metric-label"><span data-t="case_m5"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">$300</div><div class="case-metric-label">Setup cost</div></div>
-      </div>
-    </div>
-    <div class="case-card anim">
-      <div class="case-tag"><span data-t="case_tag3"></span></div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">AI Content Machine for SaaS Marketing Team</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A B2B SaaS startup needed consistent content output but had no marketing headcount. We built an automated pipeline that generates, reviews, and schedules 30+ posts and 4 email campaigns monthly.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">25h</div><div class="case-metric-label"><span data-t="case_m5"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">4×</div><div class="case-metric-label"><span data-t="case_m6"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">$200</div><div class="case-metric-label">/month retainer</div></div>
-      </div>
-    </div>
-    <div class="case-card anim">
-      <div class="case-tag"><span data-t="case_tag4"></span></div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">Document Processing Automation for Law Firm</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A boutique law firm was spending 15 hours/week on manual document review and client intake. We automated intake forms, document classification, and summary generation.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">15h</div><div class="case-metric-label"><span data-t="case_m5"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">90%</div><div class="case-metric-label">Faster document processing</div></div>
-        <div class="case-metric"><div class="case-metric-num">$700</div><div class="case-metric-label">Setup cost</div></div>
-      </div>
-    </div>
-    <div class="case-card anim">
-      <div class="case-tag">Hospitality · UAE</div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">Hotel Booking & Guest Support Bot</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A boutique hotel in Dubai needed multilingual guest communication. We built a Telegram bot handling inquiries, bookings, room service requests in English, Russian, and Arabic.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">3×</div><div class="case-metric-label">Direct bookings increase</div></div>
-        <div class="case-metric"><div class="case-metric-num">24/7</div><div class="case-metric-label">Guest support coverage</div></div>
-        <div class="case-metric"><div class="case-metric-num">$500</div><div class="case-metric-label">Setup cost</div></div>
-      </div>
-    </div>
-    <div class="case-card anim">
-      <div class="case-tag">Recruitment · Australia</div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:12px">AI Candidate Screening System</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.7">A recruitment agency was manually screening 200+ applications per week. We built an AI system that screens CVs, scores candidates, and schedules interviews with qualified applicants automatically.</p>
-      <div class="case-result">
-        <div class="case-metric"><div class="case-metric-num">200+</div><div class="case-metric-label">CVs screened/week auto</div></div>
-        <div class="case-metric"><div class="case-metric-num">40h</div><div class="case-metric-label"><span data-t="case_m5"></span></div></div>
-        <div class="case-metric"><div class="case-metric-num">$600</div><div class="case-metric-label">Setup cost</div></div>
-      </div>
-    </div>
+<header class="page-header">
+  <span class="label" data-p="cases_kicker"></span>
+  <h1 data-p="cases_h1"></h1>
+  <p data-p="cases_sub"></p>
+</header>
+<section class="clean-wrap" style="padding-top:0">
+  <div class="clean-note"><span data-p="cases_note"></span></div>
+</section>
+<section class="clean-wrap">
+  <div class="clean-grid-2">
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case1_t"></h3><p data-p="case1_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case1_m1"></strong><span data-p="case1_l1"></span></div><div class="demo-metric"><strong data-p="case1_m2"></strong><span data-p="case1_l2"></span></div><div class="demo-metric"><strong data-p="case1_m3"></strong><span data-p="case1_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case2_t"></h3><p data-p="case2_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case2_m1"></strong><span data-p="case2_l1"></span></div><div class="demo-metric"><strong data-p="case2_m2"></strong><span data-p="case2_l2"></span></div><div class="demo-metric"><strong data-p="case2_m3"></strong><span data-p="case2_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case3_t"></h3><p data-p="case3_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case3_m1"></strong><span data-p="case3_l1"></span></div><div class="demo-metric"><strong data-p="case3_m2"></strong><span data-p="case3_l2"></span></div><div class="demo-metric"><strong data-p="case3_m3"></strong><span data-p="case3_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case4_t"></h3><p data-p="case4_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case4_m1"></strong><span data-p="case4_l1"></span></div><div class="demo-metric"><strong data-p="case4_m2"></strong><span data-p="case4_l2"></span></div><div class="demo-metric"><strong data-p="case4_m3"></strong><span data-p="case4_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case5_t"></h3><p data-p="case5_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case5_m1"></strong><span data-p="case5_l1"></span></div><div class="demo-metric"><strong data-p="case5_m2"></strong><span data-p="case5_l2"></span></div><div class="demo-metric"><strong data-p="case5_m3"></strong><span data-p="case5_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
+    <div class="demo-card anim"><span class="clean-pill">Demo workflow</span><h3 data-p="case6_t"></h3><p data-p="case6_d"></p><div class="demo-metrics"><div class="demo-metric"><strong data-p="case6_m1"></strong><span data-p="case6_l1"></span></div><div class="demo-metric"><strong data-p="case6_m2"></strong><span data-p="case6_l2"></span></div><div class="demo-metric"><strong data-p="case6_m3"></strong><span data-p="case6_l3"></span></div></div><a href="contact.html" class="btn btn-ghost" data-p="cases_cta"></a></div>
   </div>
 </section>
-
-<section class="section section-dark" style="text-align:center">
-  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,4vw,52px);letter-spacing:-2px;margin-bottom:16px">Your business could be next.</h2>
-  <p style="color:var(--muted);font-size:16px;margin-bottom:40px">Book a free audit and we'll identify your automation opportunities.</p>
-  <a href="contact.html" class="btn btn-primary btn-xl">Book Free Audit</a>
-</section>
-
 <div id="footer-placeholder"></div>
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
+<script src="js/layout.js?v=20260610-clean2"></script>
+<script src="js/main.js?v=11"></script>
+<script src="js/page-copy.js?v=20260610-clean2"></script>
 </body>
 </html>
