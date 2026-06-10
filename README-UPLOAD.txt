@@ -1,17 +1,33 @@
-OPERIX RESTORE + REFINE
+OPERIX MP4 MOTION MOBILE READY
 
-Это откат последнего варианта, который тебе не понравился.
-Структура сайта возвращается как была до anthropic-motion.
+Это тот же пакет с MP4 motion, но с отдельной доводкой под mobile/tablet.
 
-Что меняется:
-- НЕ меняется вся архитектура главной.
-- Цвета становятся ближе к Anthropic: warm cream / paper / soft brown / black / terra-cotta.
-- Блоки становятся округлёнными как у Anthropic.
-- Кнопки больше не сливаются с текстом.
-- Анимации появления работают стабильно.
-- Добавлены video-like motion-блоки на разных страницах:
-  index, services, pricing, cases, about, contact.
-  Это не mp4, а лёгкие CSS-анимации, чтобы сайт быстро грузился.
+Что добавлено:
+- css/mobile-smooth.css
+- js/mobile-smooth.js
+- обновлён js/layout.js
+- все HTML подключают mobile-smooth layer напрямую
+
+Что чинит:
+1. Видео на мобильных:
+   - playsinline/muted/autoplay-safe
+   - если видео вне экрана на телефоне — оно ставится на pause
+   - если пользователь включил reduced motion — видео отключается
+
+2. Mobile layout:
+   - нет горизонтального скролла
+   - hero/page-header нормально ужимаются
+   - кнопки full-width на телефоне
+   - карточки/блоки не вылезают
+   - таблицы pricing скроллятся горизонтально безопасно
+
+3. Burger/menu:
+   - меню закрывается после клика по ссылке
+   - высота меню безопасная для 100dvh
+
+4. Анимации:
+   - быстрее и легче на mobile
+   - fallback, если IntersectionObserver не сработал
 
 Как залить:
 1. Распакуй ZIP.
@@ -20,10 +36,12 @@ OPERIX RESTORE + REFINE
 4. Перетащи ВСЁ содержимое архива в корень repo.
 5. Согласись на Replace existing files.
 6. Commit message:
-   Restore layout and refine Anthropic style
-7. Открой:
-   https://operixai.github.io/operix/?v=refine1
+   Mobile optimize MP4 motion site
+7. Проверка:
+   https://operixai.github.io/operix/?v=mobile1
 
-Если что-то не обновилось:
+Проверяй обязательно:
+- Chrome desktop
 - Incognito
-- Ctrl+F5
+- mobile responsive mode 390px
+- реальный телефон
