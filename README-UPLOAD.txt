@@ -1,25 +1,33 @@
-OPERIX FAVICON PACK
+OPERIX FORCE FAVICON UPDATE
 
-Replace these files in the repo root:
-- favicon.ico  -> main browser tab icon
-- icon-192.png -> PWA/mobile icon (your pages already reference this)
+Почему не менялось:
+- favicon.ico в репо уже новый.
+- Но HTML ссылается на favicon.ico без ?v=...
+- Браузеры очень жёстко кэшируют favicon, поэтому старое лого может висеть даже после замены файла.
 
-Optional extra files included:
-- apple-touch-icon.png
-- favicon-16x16.png
-- favicon-32x32.png
-- favicon-48x48.png
-- favicon-64x64.png
-- icon-512.png
-- operix-favicon-master.png
+Что делает этот пакет:
+- Добавляет cache-busting ко всем страницам:
+  /operix/favicon.ico?v=20260610-fav3
+- Добавляет shortcut icon.
+- Добавляет PNG favicon 16/32.
+- Добавляет apple-touch-icon.
+- Добавляет site.webmanifest.
+- Кладёт все favicon файлы в корень repo.
 
-Fastest method:
-1. Open GitHub repo operixai/operix
-2. Upload and replace favicon.ico
-3. Upload and replace icon-192.png
-4. (Optional) upload apple-touch-icon.png and change the HTML later if needed
-5. Commit changes
-6. Hard refresh or open in Incognito.
+Как залить:
+1. Распакуй ZIP.
+2. Открой repo: operixai/operix
+3. Add file → Upload files
+4. Перетащи ВСЁ содержимое архива в корень repo.
+5. Согласись на Replace existing files.
+6. Commit message: Force favicon cache update
+7. Commit changes.
+8. Открой в Incognito:
+   https://operixai.github.io/operix/pricing.html?v=fav3
 
-If the old icon still shows, the browser is caching the favicon.
-Use Ctrl+F5, Incognito, or wait a few minutes.
+Если старое всё ещё видно:
+- Закрой вкладку.
+- Открой Incognito.
+- Или напрямую открой:
+  https://operixai.github.io/operix/favicon.ico?v=20260610-fav3
+Если там новая иконка — сайт уже обновлён, старое держит кэш браузера.
