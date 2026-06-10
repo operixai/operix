@@ -35,26 +35,46 @@
     head.appendChild(mobile);
   }
 
+
+  if (!document.querySelector('link[href*="css/video-quality-fix.css"]')) {
+    const videoQuality = document.createElement('link');
+    videoQuality.rel = 'stylesheet';
+    videoQuality.href = 'css/video-quality-fix.css?v=20260610-hq2';
+    head.appendChild(videoQuality);
+  }
+
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
-    const script = document.createElement('script');
-    script.src = 'js/site-fixes.js?v=20260610-clean2';
-    script.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(script));
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
+        const script = document.createElement('script');
+        script.src = 'js/site-fixes.js?v=20260610-clean2';
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    });
   }
 
   if (!document.querySelector('script[src*="js/video-motion.js"]')) {
-    const motion = document.createElement('script');
-    motion.src = 'js/video-motion.js?v=20260610-mp4motion1';
-    motion.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motion));
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!document.querySelector('script[src*="js/video-motion.js"]')) {
+        const motion = document.createElement('script');
+        motion.src = 'js/video-motion.js?v=20260610-hq2';
+        motion.defer = true;
+        document.body.appendChild(motion);
+      }
+    });
   }
 
 
   if (!document.querySelector('script[src*="js/mobile-smooth.js"]')) {
-    const mobileScript = document.createElement('script');
-    mobileScript.src = 'js/mobile-smooth.js?v=20260610-mobile1';
-    mobileScript.defer = true;
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(mobileScript));
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!document.querySelector('script[src*="js/mobile-smooth.js"]')) {
+        const mobileScript = document.createElement('script');
+        mobileScript.src = 'js/mobile-smooth.js?v=20260610-mobile1';
+        mobileScript.defer = true;
+        document.body.appendChild(mobileScript);
+      }
+    });
   }
 
 })();
