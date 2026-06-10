@@ -1,23 +1,27 @@
-OPERIX LOOPFIX SEAMLESS MOTION
+OPERIX VIDEO AUTOPLAY LOOP ONLY
 
 База:
-- Я работал именно с твоим прикреплённым ZIP: operix-smooth-hq-motion(1).zip
-- Структуру сайта не переделывал.
+- Работал строго с твоим ZIP: operix-loopfix-seamless(2)(2).zip
+- Структуру сайта/дизайн/страницы не переделывал.
 
 Что исправлено:
-1. Видео теперь зациклены через ping-pong loop:
-   forward → reverse → forward.
-   Поэтому последний кадр совпадает с первым и loop не должен дёргаться.
-2. Desktop и mobile получают одну свежую версию:
-   loopfix1
-3. Добавлен css/motion-loopfix.css:
-   - desktop 16:9
-   - mobile 4:5
-   - video ровно лежит в блоке
-   - overlay-текст остаётся поверх и переводится RU/EN
-4. MP4 остались 1920×1080 / 60 FPS.
-5. Текст внутри самих видео не добавлялся.
-6. На desktop видео не должно паузиться mobile-скриптом.
+1. Убрал poster из motion video HTML.
+2. Видео теперь:
+   autoplay
+   muted
+   loop
+   playsinline
+   preload="auto"
+3. При скролле видео запускается заранее, когда блок близко к viewport.
+4. На mobile видео может ставиться на pause только когда далеко вне экрана, но при приближении сразу стартует.
+5. Постеры/JPG больше не используются в video tag.
+6. Добавлен css/video-autoplay-loop.css — без картинок внутри motion-блока.
+7. Desktop и mobile получают новую версию autoplayloop1.
+8. Overlay-текст остаётся HTML поверх видео и переводится RU/EN.
+
+Важно:
+- Файлы .jpg могут физически оставаться в папке, но video tag их больше не использует.
+- Если хочешь удалить .jpg из repo полностью, это нужно делать отдельным delete commit в GitHub.
 
 Как залить:
 1. Распакуй ZIP.
@@ -26,21 +30,22 @@ OPERIX LOOPFIX SEAMLESS MOTION
 4. Перетащи ВСЁ содержимое архива в корень repo.
 5. Согласись на Replace existing files.
 6. Commit message:
-   Fix seamless motion loops desktop mobile
+   Autoplay loop videos without posters
 7. Проверка:
-   https://operixai.github.io/operix/?v=loopfix1
+   https://operixai.github.io/operix/?v=autoplayloop1
 
-Если на ПК старая версия:
+Если ПК держит старое:
+- Incognito
 - DevTools → Network → Disable cache → Ctrl+F5
-- или Incognito
 - прямой тест:
-  https://operixai.github.io/operix/assets/motion/home.mp4?v=loopfix1
+  https://operixai.github.io/operix/assets/motion/home.mp4?v=autoplayloop1
 
-Проверка видео:
+Проверка:
+poster attr left in video-motion.js: False
 
-home.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
-services.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
-pricing.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
-cases.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
 about.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
+cases.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
 contact.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
+home.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
+pricing.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
+services.mp4: 1920×1080 / 60/1 / duration 6.400000 / frames 384
