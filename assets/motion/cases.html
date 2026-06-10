@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Operix case studies — AI automation examples and business outcomes.">
+<title>Case Studies — Operix</title>
+<link rel="stylesheet" href="css/main.css?v=12">
+<link rel="stylesheet" href="css/fixes.css?v=20260610-clean2">
+<link rel="stylesheet" href="css/content-clean.css?v=20260610-clean2">
+<link rel="stylesheet" href="css/refine.css?v=20260610-loopfix1">
+<link rel="stylesheet" href="css/mobile-smooth.css?v=20260610-loopfix1">
+<link rel="stylesheet" href="css/motion-loopfix.css?v=20260610-loopfix1">
+<link rel="stylesheet" href="css/video-autoplay-loop.css?v=20260610-autoplayloop1">
+<link rel="icon" type="image/png" sizes="32x32" href="/operix/operix-tab-icon-32.png?v=20260610-hard4">
+<link rel="icon" type="image/png" sizes="16x16" href="/operix/operix-tab-icon-16.png?v=20260610-hard4">
+<link rel="shortcut icon" href="/operix/operix-tab-icon.ico?v=20260610-hard4" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/operix/operix-apple-touch-icon.png?v=20260610-hard4">
+<link rel="manifest" href="/operix/site.webmanifest?v=20260610-hard4">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+.case-study-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  background:var(--border);
+}
+.case-study-card{
+  background:var(--ivory);
+  padding:36px;
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  overflow:hidden;
+  overflow-wrap:anywhere;
+}
+.case-study-card:hover{
+  background:var(--ivory-2);
+}
+.case-tag{
+  display:inline-flex;
+  width:max-content;
+  max-width:100%;
+  align-items:center;
+  border:1px solid rgba(218,119,86,.22);
+  background:var(--terracotta-bg);
+  color:var(--terracotta);
+  padding:7px 10px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.case-study-card h3{
+  font-size:clamp(22px,2.2vw,30px);
+  line-height:1.12;
+  letter-spacing:-.025em;
+  color:var(--slate);
+}
+.case-study-card p{
+  color:var(--slate-3)!important;
+  font-size:15px;
+  line-height:1.7;
+}
+.case-result{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  background:var(--border);
+  margin-top:auto;
+}
+.case-metric{
+  background:var(--ivory-2);
+  padding:16px;
+}
+.case-metric-num{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(28px,3vw,40px);
+  line-height:1;
+  color:var(--terracotta);
+  font-weight:500;
+}
+.case-metric-label{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+.case-disclaimer{
+  border:1px solid rgba(20,20,19,.11);
+  background:var(--ivory-2);
+  padding:18px 20px;
+  color:var(--slate-3);
+  line-height:1.65;
+  font-size:14px;
+  margin-top:32px;
+}
+@media(max-width:850px){
+  .case-study-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .case-study-card{padding:26px}
+  .case-result{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<header class="page-header">
+  <span class="label" data-case="label"></span>
+  <h1 data-case="h1"></h1>
+  <p data-case="sub"></p>
+</header>
+
+<section class="clean-wrap">
+  <div class="case-study-grid">
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case1_tag"></span>
+      <h3 data-case="case1_title"></h3>
+      <p data-case="case1_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">40%</span><div class="case-metric-label" data-case="case1_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">2min</span><div class="case-metric-label" data-case="case1_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$400</span><div class="case-metric-label" data-case="setup"></div></div>
+      </div>
+    </article>
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case2_tag"></span>
+      <h3 data-case="case2_title"></h3>
+      <p data-case="case2_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">80%</span><div class="case-metric-label" data-case="case2_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">30h</span><div class="case-metric-label" data-case="case2_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$300</span><div class="case-metric-label" data-case="setup"></div></div>
+      </div>
+    </article>
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case3_tag"></span>
+      <h3 data-case="case3_title"></h3>
+      <p data-case="case3_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">25h</span><div class="case-metric-label" data-case="case3_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">4×</span><div class="case-metric-label" data-case="case3_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$200</span><div class="case-metric-label" data-case="retainer"></div></div>
+      </div>
+    </article>
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case4_tag"></span>
+      <h3 data-case="case4_title"></h3>
+      <p data-case="case4_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">15h</span><div class="case-metric-label" data-case="case4_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">90%</span><div class="case-metric-label" data-case="case4_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$700</span><div class="case-metric-label" data-case="setup"></div></div>
+      </div>
+    </article>
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case5_tag"></span>
+      <h3 data-case="case5_title"></h3>
+      <p data-case="case5_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">3×</span><div class="case-metric-label" data-case="case5_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">24/7</span><div class="case-metric-label" data-case="case5_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$500</span><div class="case-metric-label" data-case="setup"></div></div>
+      </div>
+    </article>
+
+    <article class="case-study-card anim">
+      <span class="case-tag" data-case="case6_tag"></span>
+      <h3 data-case="case6_title"></h3>
+      <p data-case="case6_desc"></p>
+      <div class="case-result">
+        <div class="case-metric"><span class="case-metric-num">200+</span><div class="case-metric-label" data-case="case6_m1"></div></div>
+        <div class="case-metric"><span class="case-metric-num">40h</span><div class="case-metric-label" data-case="case6_m2"></div></div>
+        <div class="case-metric"><span class="case-metric-num">$600</span><div class="case-metric-label" data-case="setup"></div></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="clean-actions" style="justify-content:center;margin-top:42px">
+    <a href="contact.html" class="btn btn-primary btn-lg" data-case="cta"></a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/layout.js?v=20260610-loopfix1"></script>
+<script src="js/main.js?v=11"></script>
+<script src="js/page-copy.js?v=20260610-clean2"></script>
+<script>
+const CASE_COPY = {
+  en: {
+    label:'Case Studies',
+    h1:'Real automation use cases.',
+    sub:'Selected AI automation systems across lead generation, support, content, documents, hospitality, and recruiting.',
+    setup:'Setup cost',
+    retainer:'/month retainer',
+    cta:'Book Free Audit',
+
+    case1_tag:'Real Estate · USA',
+    case1_title:'AI Lead Qualification Bot for Real Estate Agency',
+    case1_desc:'A mid-size real estate agency in Texas was missing leads that came in outside business hours. We built an AI bot that qualifies prospects, answers property questions, and schedules viewings — 24/7.',
+    case1_m1:'Higher lead conversion',
+    case1_m2:'Average response time',
+
+    case2_tag:'E-Commerce · UK',
+    case2_title:'Full Customer Support Automation for Online Store',
+    case2_desc:'A UK-based fashion brand was spending 30 hours per week on customer support emails. We automated common tickets such as order status, returns, sizing questions, and product information.',
+    case2_m1:'Tickets automated',
+    case2_m2:'Saved weekly',
+
+    case3_tag:'SaaS · Canada',
+    case3_title:'AI Content Machine for SaaS Marketing Team',
+    case3_desc:'A B2B SaaS startup needed consistent content output without adding marketing headcount. We built a content pipeline that generates, reviews, and schedules posts and email campaigns.',
+    case3_m1:'Saved weekly',
+    case3_m2:'Content output increase',
+
+    case4_tag:'Legal · Germany',
+    case4_title:'Document Processing Automation for Law Firm',
+    case4_desc:'A boutique law firm was spending hours on manual document review and client intake. We automated intake forms, document classification, and summary generation.',
+    case4_m1:'Saved weekly',
+    case4_m2:'Faster document processing',
+
+    case5_tag:'Hospitality · UAE',
+    case5_title:'Hotel Booking & Guest Support Bot',
+    case5_desc:'A boutique hotel in Dubai needed multilingual guest communication. We built a Telegram bot handling inquiries, bookings, and room service requests in English, Russian, and Arabic.',
+    case5_m1:'Direct bookings increase',
+    case5_m2:'Guest support coverage',
+
+    case6_tag:'Recruitment · Australia',
+    case6_title:'AI Candidate Screening System',
+    case6_desc:'A recruitment agency was manually screening 200+ applications per week. We built an AI system that screens CVs, scores candidates, and schedules interviews with qualified applicants.',
+    case6_m1:'CVs screened per week',
+    case6_m2:'Saved weekly'
+  },
+  ru: {
+    label:'Кейсы',
+    h1:'Реальные сценарии AI-автоматизации.',
+    sub:'Подборка AI-систем для лидогенерации, поддержки, контента, документов, hospitality и рекрутинга.',
+    setup:'Стоимость запуска',
+    retainer:'/месяц retainer',
+    cta:'Получить бесплатный аудит',
+
+    case1_tag:'Недвижимость · США',
+    case1_title:'AI бот квалификации лидов для агентства недвижимости',
+    case1_desc:'Агентство недвижимости в Texas теряло лиды вне рабочего времени. Мы построили AI-бота, который квалифицирует клиентов, отвечает на вопросы по объектам и записывает на просмотры — 24/7.',
+    case1_m1:'Рост конверсии лидов',
+    case1_m2:'Среднее время ответа',
+
+    case2_tag:'E-Commerce · UK',
+    case2_title:'Полная автоматизация поддержки для online store',
+    case2_desc:'Fashion brand из UK тратил около 30 часов в неделю на customer support emails. Мы автоматизировали типовые запросы: статус заказа, возвраты, размеры и вопросы по продуктам.',
+    case2_m1:'Тикетов автоматизировано',
+    case2_m2:'Сэкономлено в неделю',
+
+    case3_tag:'SaaS · Canada',
+    case3_title:'AI контент-машина для SaaS marketing team',
+    case3_desc:'B2B SaaS startup нуждался в стабильном контенте без найма marketing headcount. Мы построили pipeline для генерации, review и планирования постов и email campaigns.',
+    case3_m1:'Сэкономлено в неделю',
+    case3_m2:'Рост объёма контента',
+
+    case4_tag:'Legal · Germany',
+    case4_title:'Автоматизация обработки документов для law firm',
+    case4_desc:'Boutique law firm тратила часы на ручной document review и client intake. Мы автоматизировали intake forms, document classification и summary generation.',
+    case4_m1:'Сэкономлено в неделю',
+    case4_m2:'Быстрее обработка документов',
+
+    case5_tag:'Hospitality · UAE',
+    case5_title:'Бот бронирования и guest support для отеля',
+    case5_desc:'Boutique hotel в Dubai нуждался в multilingual guest communication. Мы построили Telegram-бота для inquiries, bookings и room service requests на English, Russian и Arabic.',
+    case5_m1:'Рост direct bookings',
+    case5_m2:'Покрытие guest support',
+
+    case6_tag:'Recruitment · Australia',
+    case6_title:'AI система скрининга кандидатов',
+    case6_desc:'Recruitment agency вручную проверяла 200+ applications в неделю. Мы построили AI-систему, которая скринит CV, оценивает кандидатов и помогает назначать интервью.',
+    case6_m1:'CV в неделю',
+    case6_m2:'Сэкономлено в неделю'
+  }
+};
+
+function applyCaseCopy(){
+  const lang = localStorage.getItem('operix_lang') === 'ru' ? 'ru' : 'en';
+  const copy = CASE_COPY[lang];
+  document.querySelectorAll('[data-case]').forEach(el => {
+    const key = el.getAttribute('data-case');
+    if (copy[key] !== undefined) el.textContent = copy[key];
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', applyCaseCopy);
+} else {
+  applyCaseCopy();
+}
+document.addEventListener('click', e => {
+  if (e.target.closest('.lang-btn')) {
+    setTimeout(applyCaseCopy, 80);
+    setTimeout(applyCaseCopy, 240);
+  }
+});
+setTimeout(applyCaseCopy, 500);
+</script>
+<script src="js/video-motion.js?v=20260610-autoplayloop1"></script>
+<script src="js/mobile-smooth.js?v=20260610-autoplayloop1"></script>
+</body>
+</html>
