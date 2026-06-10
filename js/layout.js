@@ -19,11 +19,25 @@
     head.appendChild(clean);
   }
 
+  if (!document.querySelector('link[href*="css/polish.css"]')) {
+    const polish = document.createElement('link');
+    polish.rel = 'stylesheet';
+    polish.href = 'css/polish.css?v=20260610-polish1';
+    head.appendChild(polish);
+  }
+
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
     const script = document.createElement('script');
     script.src = 'js/site-fixes.js?v=20260610-clean2';
     script.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(script));
+  }
+
+  if (!document.querySelector('script[src*="js/polish.js"]')) {
+    const polishScript = document.createElement('script');
+    polishScript.src = 'js/polish.js?v=20260610-polish1';
+    polishScript.defer = true;
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(polishScript));
   }
 })();
 
