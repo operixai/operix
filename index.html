@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="css/main.css?v=12">
 <link rel="stylesheet" href="css/fixes.css?v=20260610-clean2">
 <link rel="stylesheet" href="css/content-clean.css?v=20260610-clean2">
-<link rel="stylesheet" href="css/polish.css?v=20260610-polish1">
-<link rel="stylesheet" href="css/anthropic-motion.css?v=20260610-motion1">
+<link rel="stylesheet" href="css/refine.css?v=20260610-refine1">
 <link rel="icon" type="image/png" sizes="32x32" href="/operix/operix-tab-icon-32.png?v=20260610-hard4">
 <link rel="icon" type="image/png" sizes="16x16" href="/operix/operix-tab-icon-16.png?v=20260610-hard4">
 <link rel="shortcut icon" href="/operix/operix-tab-icon.ico?v=20260610-hard4" type="image/x-icon">
@@ -20,106 +19,82 @@
 <body>
 <div id="nav-placeholder"></div>
 
-<section class="opx-home-hero">
-  <div class="opx-hero-left anim">
-    <div class="opx-eyebrow" data-p="home_kicker">AI Automation Agency</div>
-    <h1><span>AI systems</span> that run your business while you grow.</h1>
+<section class="clean-hero">
+  <span class="clean-kicker" data-p="home_kicker"></span>
+  <h1 class="clean-title" data-p="home_h1"></h1>
+  <p class="clean-sub" data-p="home_sub"></p>
+  <div class="clean-actions">
+    <a href="contact.html" class="btn btn-primary btn-xl" data-p="home_cta1"></a>
+    <a href="services.html" class="btn btn-ghost btn-xl" data-p="home_cta2"></a>
   </div>
-  <div class="opx-hero-right anim">
-    <p>Operix builds practical automation for leads, support, content, reporting, and daily operations.</p>
-    <div class="opx-hero-actions">
-      <a href="contact.html" class="btn btn-primary btn-xl" data-p="home_cta1">Get Free Audit</a>
-      <a href="services.html" class="btn btn-ghost btn-xl" data-p="home_cta2">Explore Services</a>
-    </div>
-  </div>
-</section>
-
-<section class="opx-motion-wrap">
-  <div class="opx-motion-card anim" aria-label="Operix live AI automation animation">
-    <div class="opx-video-badge">LIVE AUTOMATION</div>
-    <div class="opx-motion-stage" aria-hidden="true">
-      <div class="opx-ring"><span class="opx-node one"></span><span class="opx-node two"></span></div>
-      <div class="opx-data-line l1"></div>
-      <div class="opx-data-line l2"></div>
-      <div class="opx-data-line l3"></div>
-    </div>
-    <div class="opx-video-copy">
-      <h2>Systems in motion.</h2>
-      <p>Every workflow is mapped, connected, tested, and improved until it becomes part of your daily operations.</p>
-    </div>
-  </div>
-</section>
-
-<section class="opx-releases">
-  <h2>What we build</h2>
-  <div class="opx-release-grid">
-    <article class="opx-release-card anim">
-      <div>
-        <h3>AI customer support</h3>
-        <p>Instant answers, smart handoff, and multilingual support flows.</p>
-      </div>
-      <a href="services.html#chatbots">Service details →</a>
-    </article>
-    <article class="opx-release-card anim">
-      <div>
-        <h3>Lead qualification systems</h3>
-        <p>Capture, score, route, and follow up with leads automatically.</p>
-      </div>
-      <a href="services.html#leads">Service details →</a>
-    </article>
-    <article class="opx-release-card anim">
-      <div>
-        <h3>Operations automation</h3>
-        <p>Connect CRM, forms, email, spreadsheets, dashboards, and alerts.</p>
-      </div>
-      <a href="services.html#automation">Service details →</a>
-    </article>
-  </div>
-</section>
-
-<section class="section section-dark">
-  <span class="clean-kicker" data-p="home_process_label">Process</span>
-  <h2 class="section-title" style="margin-bottom:48px" data-p="home_process_title">Simple build process. No bloated consulting.</h2>
-  <div class="clean-grid-4">
-    <div class="outcome-card anim"><span class="clean-num">01</span><h3 data-p="home_p1_t">Audit</h3><p data-p="home_p1_d">We map your workflow and find the highest-ROI automation opportunity.</p></div>
-    <div class="outcome-card anim"><span class="clean-num">02</span><h3 data-p="home_p2_t">Prototype</h3><p data-p="home_p2_d">You see a working version quickly, not a 40-page document.</p></div>
-    <div class="outcome-card anim"><span class="clean-num">03</span><h3 data-p="home_p3_t">Deploy</h3><p data-p="home_p3_d">We connect the system to your real tools and test the full flow.</p></div>
-    <div class="outcome-card anim"><span class="clean-num">04</span><h3 data-p="home_p4_t">Improve</h3><p data-p="home_p4_d">We monitor, refine, and expand when the workflow proves useful.</p></div>
+  <div class="clean-proof">
+    <span class="proof-token" data-p="home_proof1"></span>
+    <span class="proof-token" data-p="home_proof2"></span>
+    <span class="proof-token" data-p="home_proof3"></span>
+    <span class="proof-token" data-p="home_proof4"></span>
+    <span class="proof-token" data-p="home_proof5"></span>
   </div>
 </section>
 
 <section class="clean-wrap">
-  <span class="clean-kicker" data-p="home_outcomes_label">Example outcomes</span>
-  <h2 class="section-title" style="margin-bottom:48px" data-p="home_outcomes_title">What automation can realistically do.</h2>
+  <div class="section-head">
+    <div>
+      <span class="clean-kicker" data-p="home_services_label"></span>
+      <h2 class="section-title" data-p="home_services_title"></h2>
+    </div>
+    <p data-p="home_services_sub"></p>
+  </div>
   <div class="clean-grid-3">
-    <div class="clean-card anim"><h3 data-p="home_o1_t">Lead intake</h3><p data-p="home_o1_d">Respond instantly, ask qualifying questions, send hot leads to your team.</p><div class="outcome-meta"><span>Instant reply</span><span>CRM routing</span></div></div>
-    <div class="clean-card anim"><h3 data-p="home_o2_t">Support</h3><p data-p="home_o2_d">Handle FAQs, status requests, returns, and routing automatically.</p><div class="outcome-meta"><span>FAQ</span><span>Human handoff</span></div></div>
-    <div class="clean-card anim"><h3 data-p="home_o3_t">Operations</h3><p data-p="home_o3_d">Move data between forms, spreadsheets, CRM, email, and dashboards.</p><div class="outcome-meta"><span>Forms</span><span>Dashboards</span></div></div>
+    <div class="clean-card anim"><div class="clean-num">01</div><div class="clean-icon"><svg><use href="#i-bot"/></svg></div><h3 data-p="home_s1_t"></h3><p data-p="home_s1_d"></p></div>
+    <div class="clean-card anim"><div class="clean-num">02</div><div class="clean-icon"><svg><use href="#i-zap"/></svg></div><h3 data-p="home_s2_t"></h3><p data-p="home_s2_d"></p></div>
+    <div class="clean-card anim"><div class="clean-num">03</div><div class="clean-icon"><svg><use href="#i-target"/></svg></div><h3 data-p="home_s3_t"></h3><p data-p="home_s3_d"></p></div>
+    <div class="clean-card anim"><div class="clean-num">04</div><div class="clean-icon"><svg><use href="#i-chart"/></svg></div><h3 data-p="home_s4_t"></h3><p data-p="home_s4_d"></p></div>
+    <div class="clean-card anim"><div class="clean-num">05</div><div class="clean-icon"><svg><use href="#i-edit"/></svg></div><h3 data-p="home_s5_t"></h3><p data-p="home_s5_d"></p></div>
+    <div class="clean-card anim"><div class="clean-num">06</div><div class="clean-icon"><svg><use href="#i-cpu"/></svg></div><h3 data-p="home_s6_t"></h3><p data-p="home_s6_d"></p></div>
   </div>
 </section>
 
 <section class="section section-dark">
-  <span class="clean-kicker" data-p="home_ind_label">Industries</span>
-  <h2 class="section-title" data-p="home_ind_title">Useful across many business types.</h2>
-  <p class="clean-sub" style="color:rgba(250,249,245,.7)!important" data-p="home_ind_sub">Real estate, e-commerce, clinics, agencies, hospitality, education, logistics, retail, and more.</p>
-  <div style="margin-top:34px" class="clean-actions">
-    <a href="cases.html" class="btn btn-primary" data-t="nav_cases">Case Studies</a>
-    <a href="contact.html" class="btn btn-ghost" data-p="home_cta1">Get Free Audit</a>
+  <span class="clean-kicker" data-p="home_process_label"></span>
+  <h2 class="section-title" style="margin-bottom:48px" data-p="home_process_title"></h2>
+  <div class="clean-grid-4">
+    <div class="outcome-card anim"><span class="clean-num">01</span><h3 data-p="home_p1_t"></h3><p data-p="home_p1_d"></p></div>
+    <div class="outcome-card anim"><span class="clean-num">02</span><h3 data-p="home_p2_t"></h3><p data-p="home_p2_d"></p></div>
+    <div class="outcome-card anim"><span class="clean-num">03</span><h3 data-p="home_p3_t"></h3><p data-p="home_p3_d"></p></div>
+    <div class="outcome-card anim"><span class="clean-num">04</span><h3 data-p="home_p4_t"></h3><p data-p="home_p4_d"></p></div>
   </div>
 </section>
 
 <section class="clean-wrap">
-  <div class="clean-note anim">
-    <strong data-p="home_final_title">Ready to find your first automation opportunity?</strong><br>
-    <span data-p="home_final_sub">Send us your current workflow. We will tell you what should be automated first and what should stay manual.</span>
+  <span class="clean-kicker" data-p="home_outcomes_label"></span>
+  <h2 class="section-title" style="margin-bottom:48px" data-p="home_outcomes_title"></h2>
+  <div class="clean-grid-3">
+    <div class="clean-card anim"><h3 data-p="home_o1_t"></h3><p data-p="home_o1_d"></p><div class="outcome-meta"><span>Instant reply</span><span>CRM routing</span></div></div>
+    <div class="clean-card anim"><h3 data-p="home_o2_t"></h3><p data-p="home_o2_d"></p><div class="outcome-meta"><span>FAQ</span><span>Human handoff</span></div></div>
+    <div class="clean-card anim"><h3 data-p="home_o3_t"></h3><p data-p="home_o3_d"></p><div class="outcome-meta"><span>Forms</span><span>Dashboards</span></div></div>
   </div>
 </section>
 
+<section class="section section-dark">
+  <span class="clean-kicker" data-p="home_ind_label"></span>
+  <h2 class="section-title" data-p="home_ind_title"></h2>
+  <p class="clean-sub" style="color:rgba(250,249,245,.7)!important" data-p="home_ind_sub"></p>
+  <div style="margin-top:34px" class="clean-actions">
+    <a href="cases.html" class="btn btn-primary" data-t="nav_cases"></a>
+    <a href="contact.html" class="btn btn-ghost" data-p="home_cta1"></a>
+  </div>
+</section>
+
+<section class="clean-wrap">
+  <div class="clean-note">
+    <strong data-p="home_final_title"></strong><br>
+    <span data-p="home_final_sub"></span>
+  </div>
+</section>
 <div id="footer-placeholder"></div>
-<script src="js/layout.js?v=20260610-motion1"></script>
+<script src="js/layout.js?v=20260610-clean2"></script>
 <script src="js/main.js?v=11"></script>
 <script src="js/page-copy.js?v=20260610-clean2"></script>
-<script src="js/polish.js?v=20260610-polish1"></script>
-<script src="js/anthropic-motion.js?v=20260610-motion1"></script>
+<script src="js/video-motion.js?v=20260610-refine1"></script>
 </body>
 </html>

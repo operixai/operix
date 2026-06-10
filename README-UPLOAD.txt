@@ -1,31 +1,29 @@
-OPERIX ANTHROPIC MOTION LAYER
+OPERIX RESTORE + REFINE
 
-Что делает:
-- Главная страница становится ближе к референсу Anthropic: большой editorial hero, кремовый фон, жирная типографика, много воздуха.
-- Добавляет motion/video-like hero block без тяжёлого mp4: animated grid, circuit-ring, moving data lines, pulsing nodes.
-- Добавляет отдельный js/anthropic-motion.js для появления блоков на скролле и интерактива.
-- Сохраняет favicon hard reset, кейсы и остальные страницы.
-- Кнопки/карточки остаются мягкими и читаемыми.
+Это откат последнего варианта, который тебе не понравился.
+Структура сайта возвращается как была до anthropic-motion.
 
-Файлы:
-- index.html
-- css/anthropic-motion.css
-- css/polish.css
-- js/anthropic-motion.js
-- js/polish.js
-- js/layout.js
+Что меняется:
+- НЕ меняется вся архитектура главной.
+- Цвета становятся ближе к Anthropic: warm cream / paper / soft brown / black / terra-cotta.
+- Блоки становятся округлёнными как у Anthropic.
+- Кнопки больше не сливаются с текстом.
+- Анимации появления работают стабильно.
+- Добавлены video-like motion-блоки на разных страницах:
+  index, services, pricing, cases, about, contact.
+  Это не mp4, а лёгкие CSS-анимации, чтобы сайт быстро грузился.
 
 Как залить:
 1. Распакуй ZIP.
 2. Открой repo: operixai/operix
 3. Add file → Upload files
-4. Перетащи index.html + папки css и js в корень repo.
+4. Перетащи ВСЁ содержимое архива в корень repo.
 5. Согласись на Replace existing files.
 6. Commit message:
-   Add Anthropic style motion layer
+   Restore layout and refine Anthropic style
 7. Открой:
-   https://operixai.github.io/operix/?v=motion1
+   https://operixai.github.io/operix/?v=refine1
 
-Важно:
-- Это не копия Anthropic, а такой же calm/editorial/premium вайб под Operix.
-- Видео-анимация сделана кодом, чтобы сайт не грузил тяжёлый mp4 и быстрее работал на GitHub Pages.
+Если что-то не обновилось:
+- Incognito
+- Ctrl+F5
