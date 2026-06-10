@@ -1,22 +1,25 @@
-OPERIX — RESTORE CASES
+OPERIX FAVICON PACK
 
-Что делает:
-- Возвращает страницу cases.html как полноценные Case Studies.
-- Оставляет новый чистый дизайн, адаптив и цветовую систему.
-- Не трогает pricing/contact/legal и остальные исправления.
-- Добавляет EN/RU для страницы кейсов через inline script.
+Replace these files in the repo root:
+- favicon.ico  -> main browser tab icon
+- icon-192.png -> PWA/mobile icon (your pages already reference this)
 
-Как залить:
-1. Распакуй ZIP.
-2. Открой GitHub repo: operixai/operix
-3. Add file → Upload files
-4. Перетащи файл cases.html в корень repo
-5. Согласись на Replace existing file
-6. Commit message: Restore case studies page
-7. Commit changes
-8. Открой:
-   https://operixai.github.io/operix/cases.html
+Optional extra files included:
+- apple-touch-icon.png
+- favicon-16x16.png
+- favicon-32x32.png
+- favicon-48x48.png
+- favicon-64x64.png
+- icon-512.png
+- operix-favicon-master.png
 
-Важно:
-- Загрузи именно cases.html в корень репозитория.
-- Остальные файлы из второго пакета не нужно откатывать.
+Fastest method:
+1. Open GitHub repo operixai/operix
+2. Upload and replace favicon.ico
+3. Upload and replace icon-192.png
+4. (Optional) upload apple-touch-icon.png and change the HTML later if needed
+5. Commit changes
+6. Hard refresh or open in Incognito.
+
+If the old icon still shows, the browser is caching the favicon.
+Use Ctrl+F5, Incognito, or wait a few minutes.
