@@ -593,3 +593,7 @@ footer{background:var(--slate)!important;color:var(--ivory)!important}
   .btn{width:100%!important}
   .hero h1{font-size:34px!important}
 }
+
+
+/* Clean2 emergency overrides */
+.section-dark h1,.section-dark h2,.section-dark h3,.section-dark .section-title{color:var(--ivory)!important}.section-dark p,.section-dark li{color:rgba(250,249,245,.70)!important}
