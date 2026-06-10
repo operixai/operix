@@ -14,7 +14,7 @@
       video.setAttribute('loop', '');
 
       if (prefersReduced()) {
-        video.pause();
+        if (isSmall()) video.pause();
         return;
       }
 
@@ -26,7 +26,7 @@
               const p = video.play();
               if (p && p.catch) p.catch(()=>{});
             } else if (isSmall()) {
-              video.pause();
+              if (isSmall()) video.pause();
             }
           });
         }, { threshold: 0.18 });

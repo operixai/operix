@@ -43,8 +43,8 @@
     return `
       <section class="opx-video-panel anim" data-theme="${item.theme}" data-video-panel="1">
         <div class="opx-video-inner">
-          <video class="opx-motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/motion/${item.video}.jpg?v=smoothhq1">
-            <source src="assets/motion/${item.video}.mp4?v=smoothhq1" type="video/mp4">
+          <video class="opx-motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/motion/${item.video}.jpg?v=loopfix1">
+            <source src="assets/motion/${item.video}.mp4?v=loopfix1" type="video/mp4">
           </video>
           <div class="opx-video-shade"></div>
           <div class="opx-video-badge" data-motion="badge">${c.badge}</div>
@@ -115,7 +115,26 @@
   function keepVideosPlaying(){
     document.querySelectorAll('.opx-motion-video').forEach(v => {
       v.muted = true;
+      v.defaultMuted = true;
       v.playsInline = true;
+      v.loop = true;
+      v.autoplay = true;
+      v.preload = 'auto';
+      v.setAttribute('playsinline', '');
+      v.setAttribute('muted', '');
+      v.setAttribute('loop', '');
+      v.setAttribute('autoplay', '');
+      v.playbackRate = 1;
+
+      // Force no visual stop on loop edge.
+      v.addEventListener('ended', () => {
+        try {
+          v.currentTime = 0;
+          const p = v.play();
+          if (p && p.catch) p.catch(()=>{});
+        } catch(e) {}
+      }, { passive:true });
+
       const p = v.play();
       if (p && p.catch) p.catch(()=>{});
     });
