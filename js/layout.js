@@ -43,6 +43,14 @@
     head.appendChild(loopfix);
   }
 
+
+  if (!document.querySelector('link[href*="css/video-autoplay-loop.css"]')) {
+    const videoAuto = document.createElement('link');
+    videoAuto.rel = 'stylesheet';
+    videoAuto.href = 'css/video-autoplay-loop.css?v=20260610-autoplayloop1';
+    head.appendChild(videoAuto);
+  }
+
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
     const script = document.createElement('script');
     script.src = 'js/site-fixes.js?v=20260610-clean2';
@@ -52,7 +60,7 @@
 
   if (!document.querySelector('script[src*="js/video-motion.js"]')) {
     const motion = document.createElement('script');
-    motion.src = 'js/video-motion.js?v=20260610-loopfix1';
+    motion.src = 'js/video-motion.js?v=20260610-autoplayloop1';
     motion.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motion));
   }
@@ -60,7 +68,7 @@
 
   if (!document.querySelector('script[src*="js/mobile-smooth.js"]')) {
     const mobileScript = document.createElement('script');
-    mobileScript.src = 'js/mobile-smooth.js?v=20260610-loopfix1';
+    mobileScript.src = 'js/mobile-smooth.js?v=20260610-autoplayloop1';
     mobileScript.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(mobileScript));
   }

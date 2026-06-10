@@ -43,8 +43,8 @@
     return `
       <section class="opx-video-panel anim" data-theme="${item.theme}" data-video-panel="1">
         <div class="opx-video-inner">
-          <video class="opx-motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/motion/${item.video}.jpg?v=loopfix1">
-            <source src="assets/motion/${item.video}.mp4?v=loopfix1" type="video/mp4">
+          <video class="opx-motion-video" autoplay muted loop playsinline preload="auto">
+            <source src="assets/motion/${item.video}.mp4?v=autoplayloop1" type="video/mp4">
           </video>
           <div class="opx-video-shade"></div>
           <div class="opx-video-badge" data-motion="badge">${c.badge}</div>
@@ -124,20 +124,72 @@
       v.setAttribute('muted', '');
       v.setAttribute('loop', '');
       v.setAttribute('autoplay', '');
+      v.setAttribute('preload', 'auto');
+      v.removeAttribute('poster');
       v.playbackRate = 1;
 
-      // Force no visual stop on loop edge.
-      v.addEventListener('ended', () => {
+      const start = () => {
         try {
-          v.currentTime = 0;
           const p = v.play();
           if (p && p.catch) p.catch(()=>{});
         } catch(e) {}
+      };
+
+      // Start as soon as browser has enough data.
+      v.addEventListener('loadeddata', start, { passive:true });
+      v.addEventListener('canplay', start, { passive:true });
+      v.addEventListener('canplaythrough', start, { passive:true });
+
+      // Safety: no visible stop on loop edge.
+      v.addEventListener('ended', () => {
+        try {
+          v.currentTime = 0;
+          start();
+        } catch(e) {}
       }, { passive:true });
 
-      const p = v.play();
-      if (p && p.catch) p.catch(()=>{});
+      start();
     });
+  }
+
+  
+  function playVideosNearViewport(){
+    const videos = Array.from(document.querySelectorAll('.opx-motion-video'));
+    if (!videos.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      videos.forEach(v => {
+        try {
+          const p = v.play();
+          if (p && p.catch) p.catch(()=>{});
+        } catch(e) {}
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.muted = true;
+          video.playsInline = true;
+          video.loop = true;
+          video.preload = 'auto';
+          video.removeAttribute('poster');
+          try {
+            const p = video.play();
+            if (p && p.catch) p.catch(()=>{});
+          } catch(e) {}
+        } else {
+          // Only pause far offscreen on small screens for performance.
+          if (window.matchMedia('(max-width: 780px)').matches) {
+            try { video.pause(); } catch(e) {}
+          }
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '420px 0px 420px 0px' });
+
+    videos.forEach(v => io.observe(v));
   }
 
   function run(){
@@ -145,12 +197,13 @@
     updatePanelLanguage();
     reveal();
     keepVideosPlaying();
+    playVideosNearViewport();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
 
-  window.addEventListener('load', () => { setTimeout(reveal, 150); keepVideosPlaying(); });
+  window.addEventListener('load', () => { setTimeout(reveal, 150); keepVideosPlaying(); playVideosNearViewport(); });
 
   document.addEventListener('click', e => {
     if (e.target.closest('.lang-btn')) {
