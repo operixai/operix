@@ -1,28 +1,22 @@
-OPERIX FULL CLEANUP — SECOND PACKAGE
+OPERIX — RESTORE CASES
 
-Что это исправляет:
-- Полностью заменяет index/services/pricing/cases/about/blog/contact/privacy/terms.
-- Убирает fake-looking кейсы и testimonials.
-- Cases теперь честно называются demo workflows, не выдуманные клиенты.
-- Blog больше не выглядит как фейковые статьи без ссылок: теперь это planned playbooks / coming soon.
-- Pricing переписан под нормальные классы и адаптив.
-- Privacy приведён к Formspree: больше нет ложной фразы, что данные не проходят через third-party.
-- Contact переписан без старых Google Sheets комментариев и оставлен Formspree endpoint.
-- Добавлен js/page-copy.js для нормального EN/RU на переписанных страницах.
-- Добавлен css/content-clean.css для чистого слоя страниц.
-- layout.js обновлён: подключает fixes.css, content-clean.css и site-fixes.js с новым cache-busting.
+Что делает:
+- Возвращает страницу cases.html как полноценные Case Studies.
+- Оставляет новый чистый дизайн, адаптив и цветовую систему.
+- Не трогает pricing/contact/legal и остальные исправления.
+- Добавляет EN/RU для страницы кейсов через inline script.
 
 Как залить:
 1. Распакуй ZIP.
-2. Открой repo: operixai/operix
+2. Открой GitHub repo: operixai/operix
 3. Add file → Upload files
-4. Перетащи ВСЁ содержимое архива в GitHub.
-5. Согласись на Replace existing files.
-6. Commit message: Full cleanup pages and honest content
-7. Commit changes.
-8. Через пару минут открой сайт в инкогнито:
-   https://operixai.github.io/operix/
+4. Перетащи файл cases.html в корень repo
+5. Согласись на Replace existing file
+6. Commit message: Restore case studies page
+7. Commit changes
+8. Открой:
+   https://operixai.github.io/operix/cases.html
 
 Важно:
-- Загружай именно содержимое архива, не папку operix-full-cleanup целиком.
-- Если браузер держит кеш, открой Incognito или добавь ?v=20260610-clean2 к URL.
+- Загрузи именно cases.html в корень репозитория.
+- Остальные файлы из второго пакета не нужно откатывать.
