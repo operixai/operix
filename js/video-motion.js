@@ -41,10 +41,10 @@
   function panelHTML(item){
     const c = item[lang()] || item.en;
     return `
-      <section class="opx-video-panel anim" data-theme="${item.theme}" data-video-panel="1">
+      <section class="opx-video-panel anim" data-theme="${item.theme}" data-video-panel="1" style="overflow:hidden">
         <div class="opx-video-inner">
-          <video class="opx-motion-video" autoplay muted loop playsinline preload="auto">
-            <source src="assets/motion/${item.video}.mp4?v=autoplayloop1" type="video/mp4">
+          <video class="opx-motion-video" autoplay muted loop playsinline preload="auto" poster="assets/motion/${item.video}.jpg?v=smoothhq2" style="will-change:transform;transform:translateZ(0)">
+            <source src="assets/motion/${item.video}.mp4?v=smoothhq1" type="video/mp4">
           </video>
           <div class="opx-video-shade"></div>
           <div class="opx-video-badge" data-motion="badge">${c.badge}</div>
@@ -115,81 +115,22 @@
   function keepVideosPlaying(){
     document.querySelectorAll('.opx-motion-video').forEach(v => {
       v.muted = true;
-      v.defaultMuted = true;
-      v.playsInline = true;
       v.loop = true;
-      v.autoplay = true;
-      v.preload = 'auto';
-      v.setAttribute('playsinline', '');
-      v.setAttribute('muted', '');
-      v.setAttribute('loop', '');
-      v.setAttribute('autoplay', '');
-      v.setAttribute('preload', 'auto');
-      v.removeAttribute('poster');
-      v.playbackRate = 1;
-
-      const start = () => {
-        try {
-          const p = v.play();
-          if (p && p.catch) p.catch(()=>{});
-        } catch(e) {}
-      };
-
-      // Start as soon as browser has enough data.
-      v.addEventListener('loadeddata', start, { passive:true });
-      v.addEventListener('canplay', start, { passive:true });
-      v.addEventListener('canplaythrough', start, { passive:true });
-
-      // Safety: no visible stop on loop edge.
-      v.addEventListener('ended', () => {
-        try {
-          v.currentTime = 0;
-          start();
-        } catch(e) {}
-      }, { passive:true });
-
-      start();
-    });
-  }
-
-  
-  function playVideosNearViewport(){
-    const videos = Array.from(document.querySelectorAll('.opx-motion-video'));
-    if (!videos.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      videos.forEach(v => {
-        try {
-          const p = v.play();
-          if (p && p.catch) p.catch(()=>{});
-        } catch(e) {}
-      });
-      return;
-    }
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          video.muted = true;
-          video.playsInline = true;
-          video.loop = true;
-          video.preload = 'auto';
-          video.removeAttribute('poster');
-          try {
-            const p = video.play();
-            if (p && p.catch) p.catch(()=>{});
-          } catch(e) {}
-        } else {
-          // Only pause far offscreen on small screens for performance.
-          if (window.matchMedia('(max-width: 780px)').matches) {
-            try { video.pause(); } catch(e) {}
-          }
+      v.playsInline = true;
+      v.setAttribute('loop','');
+      v.setAttribute('muted','');
+      v.setAttribute('playsinline','');
+      // Prevent jitter at loop point
+      v.addEventListener('timeupdate', function() {
+        if (!this._loopFix && this.duration && this.currentTime > this.duration - 0.15) {
+          this._loopFix = true;
+          this.currentTime = 0;
+          setTimeout(() => { this._loopFix = false; }, 300);
         }
-      });
-    }, { threshold: 0.01, rootMargin: '420px 0px 420px 0px' });
-
-    videos.forEach(v => io.observe(v));
+      }, { passive: true });
+      const p = v.play();
+      if (p && p.catch) p.catch(()=>{});
+    });
   }
 
   function run(){
@@ -197,13 +138,12 @@
     updatePanelLanguage();
     reveal();
     keepVideosPlaying();
-    playVideosNearViewport();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
 
-  window.addEventListener('load', () => { setTimeout(reveal, 150); keepVideosPlaying(); playVideosNearViewport(); });
+  window.addEventListener('load', () => { setTimeout(reveal, 150); keepVideosPlaying(); });
 
   document.addEventListener('click', e => {
     if (e.target.closest('.lang-btn')) {
