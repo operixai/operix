@@ -1,24 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
 :root {
-  --black: #060606;
-  --white: #f4f1ed;
-  --accent: #e8ff47;
-  --accent2: #ff6b35;
-  --gray: #111111;
-  --gray2: #1c1c1c;
-  --gray3: #2a2a2a;
-  --muted: rgba(244,241,237,0.4);
-  --muted2: rgba(244,241,237,0.15);
-  --border: rgba(244,241,237,0.07);
+  --black:  #eeece2;
+  --white:  #3d3929;
+  --accent: #da7756;
+  --accent2: #bd5d3a;
+  --gray:   #f5f3ea;
+  --gray2:  #e8e5d8;
+  --gray3:  #dbd7c8;
+  --muted:  rgba(61,57,41,0.45);
+  --muted2: rgba(61,57,41,0.12);
+  --border: rgba(61,57,41,0.1);
+  --bg:     #eeece2;
+  --surface:#f5f3ea;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--black);
+  background: var(--bg);
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
   font-weight: 300;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -26,6 +28,7 @@ body {
 
 body::after {
   content: '';
+  display: none;
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
@@ -49,7 +52,7 @@ nav {
   border-bottom: 1px solid var(--border);
   transition: all 0.3s;
 }
-nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
+nav.scrolled { height: 60px; background: rgba(238,236,226,0.98); }
 
 .logo {
   font-family: 'Syne', sans-serif;
@@ -97,7 +100,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
   border: none; font-family: 'DM Sans', sans-serif;
   transition: all 0.2s; white-space: nowrap;
 }
-.btn-primary { background: var(--accent); color: var(--black); }
+.btn-primary { background: var(--accent); color: #ffffff; }
 .btn-primary:hover { background: var(--white); transform: translateY(-1px); }
 .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--border); }
 .btn-ghost:hover { border-color: rgba(244,241,237,0.3); background: var(--gray2); }
@@ -196,7 +199,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 /* ── SECTIONS ── */
 .section { padding: 120px 56px; }
 .section-sm { padding: 80px 56px; }
-.section-dark { background: var(--gray); }
+.section-dark { background: var(--surface); }
 
 .label {
   font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
@@ -225,8 +228,8 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
   background: var(--black); padding: 44px 40px;
   transition: background 0.25s; position: relative; overflow: hidden;
 }
-.card:hover { background: var(--gray); }
-.card-dark { background: var(--gray); }
+.card:hover { background: var(--surface); }
+.card-dark { background: var(--surface); }
 .card-dark:hover { background: var(--gray2); }
 
 .card-num {
@@ -275,7 +278,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
   display: flex; align-items: center; justify-content: center;
   font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
   margin-bottom: 28px; transition: all 0.25s;
-  background: var(--gray);
+  background: var(--surface);
 }
 .step-item:hover .step-circle {
   border-color: var(--accent); color: var(--accent);
@@ -300,10 +303,10 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 
 /* ── PRICING ── */
 .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
-.plan { background: var(--gray); padding: 48px 40px; position: relative; }
+.plan { background: var(--surface); padding: 48px 40px; position: relative; }
 .plan.featured { background: var(--black); outline: 1px solid rgba(232,255,71,0.2); z-index: 1; }
 .plan-tag {
-  display: inline-block; background: var(--accent); color: var(--black);
+  display: inline-block; background: var(--accent); color: #ffffff;
   font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   padding: 4px 12px; border-radius: 100px; margin-bottom: 20px;
@@ -323,7 +326,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 
 /* ── TESTIMONIALS ── */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
-.testimonial { background: var(--gray); padding: 40px; }
+.testimonial { background: var(--surface); padding: 40px; }
 .testimonial-quote {
   font-size: 15px; line-height: 1.7; color: rgba(244,241,237,0.75);
   margin-bottom: 28px; font-style: italic;
@@ -363,7 +366,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
 .form-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-family: 'Syne', sans-serif; font-weight: 600; }
 .form-input, .form-select, .form-textarea {
-  background: var(--gray); border: 1px solid var(--border);
+  background: var(--surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 14px 18px;
   color: var(--white); font-family: 'DM Sans', sans-serif;
   font-size: 15px; font-weight: 300; outline: none;
@@ -380,7 +383,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
 .contact-method {
   display: flex; align-items: flex-start; gap: 16px;
   padding: 24px; border: 1px solid var(--border);
-  border-radius: 12px; background: var(--gray); transition: all 0.25s;
+  border-radius: 12px; background: var(--surface); transition: all 0.25s;
   text-decoration: none; color: var(--white);
 }
 .contact-method:hover { border-color: rgba(232,255,71,0.3); background: var(--gray2); }
@@ -407,7 +410,7 @@ nav.scrolled { height: 60px; background: rgba(6,6,6,0.95); }
   content: '';
   position: absolute; top: -100px; right: -100px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(232,255,71,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(218,119,86,0.12) 0%, transparent 70%);
 }
 .cta-banner h2 {
   font-family: 'Syne', sans-serif; font-weight: 800;
