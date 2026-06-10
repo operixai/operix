@@ -247,3 +247,80 @@
   setTimeout(run, 300);
   setTimeout(run, 900);
 })();
+
+
+// ── CLEAN2 HONESTY PATCHES ──
+(function(){
+  const honest = {
+    en: {
+      proof: 'Practical AI automation systems for service businesses.',
+      outcomeLabel: 'Example outcomes',
+      outcomeTitle: 'Automation examples, not fake client claims.',
+      outcomeDesc: 'Public pages now show demo workflows and implementation scenarios unless a client approves a real case study.'
+    },
+    ru: {
+      proof: 'Практичные AI-автоматизации для сервисных бизнесов.',
+      outcomeLabel: 'Примеры результатов',
+      outcomeTitle: 'Примеры автоматизаций, а не выдуманные кейсы.',
+      outcomeDesc: 'Публичные страницы теперь показывают demo-workflows и сценарии внедрения, пока клиент не одобрил реальный кейс.'
+    }
+  };
+
+  function lang(){ return localStorage.getItem('operix_lang') === 'ru' ? 'ru' : 'en'; }
+
+  function patchHomepageHonesty(){
+    const l = lang();
+    const proofText = document.querySelector('.proof-text span');
+    if (proofText) proofText.innerHTML = honest[l].proof;
+
+    const avatars = document.querySelectorAll('.proof-avatar');
+    const labels = ['AI','OPS','CRM','API','24/7'];
+    avatars.forEach((el, i) => {
+      el.textContent = labels[i] || 'AI';
+      el.removeAttribute('style');
+    });
+
+    const testLabel = document.querySelector('[data-t="test_label"]');
+    if (testLabel) testLabel.textContent = honest[l].outcomeLabel;
+
+    const testTitle = document.querySelector('[data-t="test_title"]');
+    if (testTitle) testTitle.textContent = honest[l].outcomeTitle;
+
+    const quotes = document.querySelectorAll('.testimonial-quote');
+    const names = document.querySelectorAll('.author-name');
+    const roles = document.querySelectorAll('.author-role');
+
+    const data = l === 'ru'
+      ? [
+          ['AI-бот может принимать заявки, задавать уточняющие вопросы и передавать горячие лиды менеджеру без задержки.', 'Lead intake workflow', 'Demo scenario'],
+          ['Поддержка может автоматически отвечать на частые вопросы, статусы заказов и возвраты, оставляя команде только сложные случаи.', 'Support automation', 'Demo scenario'],
+          ['Контент-пайплайн может готовить черновики постов, email и описаний товаров по вашему tone of voice.', 'Content workflow', 'Demo scenario']
+        ]
+      : [
+          ['An AI bot can capture inquiries, ask qualifying questions, and route warm leads to your team without delay.', 'Lead intake workflow', 'Demo scenario'],
+          ['Support automation can answer FAQs, order status questions, and return requests while your team handles complex cases.', 'Support automation', 'Demo scenario'],
+          ['A content pipeline can draft posts, emails, and product descriptions in your brand voice.', 'Content workflow', 'Demo scenario']
+        ];
+
+    quotes.forEach((q, i) => { if (data[i]) q.textContent = data[i][0]; });
+    names.forEach((n, i) => { if (data[i]) n.textContent = data[i][1]; });
+    roles.forEach((r, i) => { if (data[i]) r.textContent = data[i][2]; });
+  }
+
+  function runClean2(){
+    patchHomepageHonesty();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runClean2);
+  } else {
+    runClean2();
+  }
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.lang-btn')) {
+      setTimeout(runClean2, 80);
+      setTimeout(runClean2, 240);
+    }
+  });
+  setTimeout(runClean2, 500);
+})();

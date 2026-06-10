@@ -8,13 +8,20 @@
   if (!document.querySelector('link[href*="css/fixes.css"]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'css/fixes.css?v=20260610';
+    link.href = 'css/fixes.css?v=20260610-clean2';
     head.appendChild(link);
+  }
+
+  if (!document.querySelector('link[href*="css/content-clean.css"]')) {
+    const clean = document.createElement('link');
+    clean.rel = 'stylesheet';
+    clean.href = 'css/content-clean.css?v=20260610-clean2';
+    head.appendChild(clean);
   }
 
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
     const script = document.createElement('script');
-    script.src = 'js/site-fixes.js?v=20260610';
+    script.src = 'js/site-fixes.js?v=20260610-clean2';
     script.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(script));
   }
@@ -44,7 +51,7 @@ const NAV_HTML = `
 ${SVG_SPRITE}
 <nav>
   <a href="index.html" class="logo" aria-label="Operix home">
-    <img src="logo.png?v=20260610" alt="Operix" />
+    <img src="logo.png?v=20260610-clean2" alt="Operix" />
   </a>
 
   <ul class="nav-links">
@@ -102,7 +109,7 @@ const FOOTER_HTML = `
   <div class="footer-top">
     <div class="footer-brand">
       <a href="index.html" class="logo">
-        <img src="logo.png?v=20260610" alt="Operix" />
+        <img src="logo.png?v=20260610-clean2" alt="Operix" />
       </a>
       <p data-t="footer_desc"></p>
     </div>
