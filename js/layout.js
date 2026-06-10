@@ -26,6 +26,21 @@
     head.appendChild(polish);
   }
 
+
+  if (!document.querySelector('link[href*="css/polish.css"]')) {
+    const polish = document.createElement('link');
+    polish.rel = 'stylesheet';
+    polish.href = 'css/polish.css?v=20260610-polish1';
+    head.appendChild(polish);
+  }
+
+  if (!document.querySelector('link[href*="css/anthropic-motion.css"]')) {
+    const motionCss = document.createElement('link');
+    motionCss.rel = 'stylesheet';
+    motionCss.href = 'css/anthropic-motion.css?v=20260610-motion1';
+    head.appendChild(motionCss);
+  }
+
   if (!document.querySelector('script[src*="js/site-fixes.js"]')) {
     const script = document.createElement('script');
     script.src = 'js/site-fixes.js?v=20260610-clean2';
@@ -39,6 +54,21 @@
     polishScript.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(polishScript));
   }
+
+  if (!document.querySelector('script[src*="js/polish.js"]')) {
+    const polishScript = document.createElement('script');
+    polishScript.src = 'js/polish.js?v=20260610-polish1';
+    polishScript.defer = true;
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(polishScript));
+  }
+
+  if (!document.querySelector('script[src*="js/anthropic-motion.js"]')) {
+    const motionScript = document.createElement('script');
+    motionScript.src = 'js/anthropic-motion.js?v=20260610-motion1';
+    motionScript.defer = true;
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motionScript));
+  }
+
 })();
 
 const SVG_SPRITE = `
