@@ -1,28 +1,57 @@
-// Operix HQ MP4 motion panels.
-// Video-only, no visible text overlay. Different video per page.
+// Operix MP4 motion panels with EN/RU translation.
 
 (function(){
   const page = location.pathname.split('/').pop() || 'index.html';
 
   const panels = {
-    'index.html':   { after:'.clean-hero',  video:'home',     label:{en:'Automation motion', ru:'Анимация автоматизации'} },
-    'services.html':{ after:'.page-header', video:'services', label:{en:'Service map motion', ru:'Анимация карты услуг'} },
-    'pricing.html': { after:'.page-header', video:'pricing',  label:{en:'Pricing tiers motion', ru:'Анимация тарифов'} },
-    'cases.html':   { after:'.page-header', video:'cases',    label:{en:'Case transformation motion', ru:'Анимация кейсов'} },
-    'about.html':   { after:'.page-header', video:'about',    label:{en:'Operix method motion', ru:'Анимация метода Operix'} },
-    'contact.html': { after:'.page-header', video:'contact',  label:{en:'Contact workflow motion', ru:'Анимация заявки'} }
+    'index.html': {
+      theme:'light', after:'.clean-hero', video:'home',
+      en:{badge:'LIVE SYSTEM', title:'Automation in motion.', text:'Connected workflows, moving quietly in the background.'},
+      ru:{badge:'LIVE SYSTEM', title:'Автоматизация в движении.', text:'Связанные workflows работают тихо в фоне: лиды, задачи, сообщения, данные и отчёты.'}
+    },
+    'services.html': {
+      theme:'dark', after:'.page-header', video:'services',
+      en:{badge:'SERVICE MAP', title:'From request to result.', text:'Every service is a working flow: input, reasoning, action, handoff, and reporting.'},
+      ru:{badge:'КАРТА УСЛУГ', title:'От запроса до результата.', text:'Каждая услуга — рабочий flow: вход, логика, действие, передача и отчётность.'}
+    },
+    'pricing.html': {
+      theme:'soft', after:'.page-header', video:'pricing',
+      en:{badge:'CLEAR SCOPE', title:'Start small. Scale what works.', text:'Every plan is built around measurable workflows, not vague AI promises.'},
+      ru:{badge:'ПОНЯТНЫЙ SCOPE', title:'Начинаем с малого. Масштабируем то, что работает.', text:'Каждый тариф строится вокруг измеримых workflows, а не размытых AI-обещаний.'}
+    },
+    'cases.html': {
+      theme:'light', after:'.page-header', video:'cases',
+      en:{badge:'CASE FLOW', title:'Before and after automation.', text:'Case studies show what changes when speed, routing, and repetitive work become automatic.'},
+      ru:{badge:'CASE FLOW', title:'До и после автоматизации.', text:'Кейсы показывают, что меняется, когда скорость, routing и рутина становятся автоматическими.'}
+    },
+    'about.html': {
+      theme:'dark', after:'.page-header', video:'about',
+      en:{badge:'OPERIX METHOD', title:'Built as systems, not slides.', text:'We prototype, test, connect, and improve until automation becomes part of real operations.'},
+      ru:{badge:'МЕТОД OPERIX', title:'Строим системы, а не презентации.', text:'Мы прототипируем, тестируем, подключаем и улучшаем, пока автоматизация не становится частью операций.'}
+    },
+    'contact.html': {
+      theme:'soft', after:'.page-header', video:'contact',
+      en:{badge:'FREE AUDIT', title:'Show us the workflow.', text:'We identify what to automate first, what to keep manual, and what the next step costs.'},
+      ru:{badge:'БЕСПЛАТНЫЙ АУДИТ', title:'Покажите нам workflow.', text:'Мы определим, что автоматизировать первым, что оставить ручным и сколько стоит следующий шаг.'}
+    }
   };
 
   function lang(){ return localStorage.getItem('operix_lang') === 'ru' ? 'ru' : 'en'; }
 
   function panelHTML(item){
-    const label = item.label[lang()] || item.label.en;
+    const c = item[lang()] || item.en;
     return `
-      <section class="opx-video-panel anim" data-video-panel="1" aria-label="${label}">
+      <section class="opx-video-panel anim" data-theme="${item.theme}" data-video-panel="1">
         <div class="opx-video-inner">
-          <video class="opx-motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/motion/${item.video}.jpg" aria-label="${label}">
-            <source src="assets/motion/${item.video}.mp4?v=hq2" type="video/mp4">
+          <video class="opx-motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/motion/${item.video}.jpg?v=smoothhq1">
+            <source src="assets/motion/${item.video}.mp4?v=smoothhq1" type="video/mp4">
           </video>
+          <div class="opx-video-shade"></div>
+          <div class="opx-video-badge" data-motion="badge">${c.badge}</div>
+          <div class="opx-video-copy">
+            <h3 data-motion="title">${c.title}</h3>
+            <p data-motion="text">${c.text}</p>
+          </div>
         </div>
       </section>`;
   }
@@ -36,14 +65,17 @@
     target.insertAdjacentHTML('afterend', panelHTML(item));
   }
 
-  function updateLabels(){
+  function updatePanelLanguage(){
     const item = panels[page];
     const panel = document.querySelector('[data-video-panel="1"]');
     if (!item || !panel) return;
-    const label = item.label[lang()] || item.label.en;
-    panel.setAttribute('aria-label', label);
-    const video = panel.querySelector('video');
-    if (video) video.setAttribute('aria-label', label);
+    const c = item[lang()] || item.en;
+    const badge = panel.querySelector('[data-motion="badge"]');
+    const title = panel.querySelector('[data-motion="title"]');
+    const text = panel.querySelector('[data-motion="text"]');
+    if (badge) badge.textContent = c.badge;
+    if (title) title.textContent = c.title;
+    if (text) text.textContent = c.text;
   }
 
   function reveal(){
@@ -84,8 +116,6 @@
     document.querySelectorAll('.opx-motion-video').forEach(v => {
       v.muted = true;
       v.playsInline = true;
-      v.setAttribute('playsinline','');
-      v.setAttribute('muted','');
       const p = v.play();
       if (p && p.catch) p.catch(()=>{});
     });
@@ -93,7 +123,7 @@
 
   function run(){
     injectPanel();
-    updateLabels();
+    updatePanelLanguage();
     reveal();
     keepVideosPlaying();
   }
@@ -105,8 +135,8 @@
 
   document.addEventListener('click', e => {
     if (e.target.closest('.lang-btn')) {
-      setTimeout(updateLabels, 80);
-      setTimeout(updateLabels, 240);
+      setTimeout(updatePanelLanguage, 80);
+      setTimeout(updatePanelLanguage, 240);
     }
   });
 })();
