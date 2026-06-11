@@ -144,7 +144,7 @@ ${SVG_SPRITE}
 
 const FOOTER_HTML = `
 <section class="footer-cta-wrap">
-  <div class="cta-banner anim">
+  <div class="cta-banner">
     <h2 data-t="cta_h"></h2>
     <div class="cta-banner-actions">
       <a href="contact.html" class="btn btn-primary btn-lg" data-t="contact_cta"></a>
