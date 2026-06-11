@@ -60,7 +60,7 @@
 
   if (!document.querySelector('script[src*="js/video-motion.js"]')) {
     const motion = document.createElement('script');
-    motion.src = 'js/video-motion.js?v=20260610-autoplayloop1';
+    motion.src = 'js/video-motion.js?v=20260611-videobadge1';
     motion.defer = true;
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(motion));
   }

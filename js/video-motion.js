@@ -47,7 +47,6 @@
             <source src="assets/motion/${item.video}.mp4?v=autoplayloop1" type="video/mp4">
           </video>
           <div class="opx-video-shade"></div>
-          <div class="opx-video-badge" data-motion="badge">${c.badge}</div>
           <div class="opx-video-copy">
             <h3 data-motion="title">${c.title}</h3>
             <p data-motion="text">${c.text}</p>
@@ -70,10 +69,8 @@
     const panel = document.querySelector('[data-video-panel="1"]');
     if (!item || !panel) return;
     const c = item[lang()] || item.en;
-    const badge = panel.querySelector('[data-motion="badge"]');
     const title = panel.querySelector('[data-motion="title"]');
     const text = panel.querySelector('[data-motion="text"]');
-    if (badge) badge.textContent = c.badge;
     if (title) title.textContent = c.title;
     if (text) text.textContent = c.text;
   }

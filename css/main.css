@@ -568,7 +568,7 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; }
 }
 .opx-video-badge {
   position:absolute; z-index:4; top:20px; left:20px;
-  display:inline-flex; align-items:center; gap:8px;
+  display:none !important; align-items:center; gap:8px;
   padding:7px 12px; background:rgba(21,21,19,.86); color:#fff;
   font-size:10px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; border-radius:999px;
 }
