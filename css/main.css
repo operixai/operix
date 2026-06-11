@@ -178,6 +178,18 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
 /* CTA banner overrides */
 .cta-banner .btn-ghost { border-color:rgba(244,241,234,.36); color:var(--ivory); }
 .cta-banner .btn-ghost:hover { border-color:var(--ivory); background:rgba(244,241,234,.1); color:var(--ivory); }
+.section-dark .btn-primary,
+.cta-banner .btn-primary {
+  background:var(--ivory);
+  border-color:var(--ivory);
+  color:var(--slate);
+}
+.section-dark .btn-primary:hover,
+.cta-banner .btn-primary:hover {
+  background:var(--terracotta);
+  border-color:var(--terracotta);
+  color:#fff;
+}
 .section-dark .btn-ghost { border-color:rgba(244,241,234,.3); color:var(--ivory); }
 .section-dark .btn-ghost:hover { background:rgba(244,241,234,.1); border-color:var(--ivory); }
 
@@ -201,6 +213,33 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
   letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:16px;
 }
 .section-title { max-width:580px; }
+
+.home-page .footer-cta-wrap {
+  display:none;
+}
+
+.home-final-section {
+  min-height:520px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:56px;
+  padding:88px 64px 64px;
+}
+
+.home-final-section .clean-sub {
+  color:rgba(250,249,245,.70) !important;
+  margin-bottom:0;
+}
+
+.home-final-actions {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:16px;
+  padding-top:32px;
+  border-top:1px solid rgba(244,241,234,.12);
+}
 
 /* ── Hero ── */
 .hero, .clean-hero {
@@ -646,9 +685,11 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; ma
   h1 { font-size:clamp(36px,12vw,54px); }
   .hero-sub, .clean-sub { font-size:16px; margin-bottom:32px; }
   .hero-actions, .clean-actions, .cta-banner-actions { flex-direction:column; width:100%; }
-  .hero-actions .btn, .clean-actions .btn, .cta-banner-actions .btn, .section-head .btn { width:100%; }
+  .hero-actions .btn, .clean-actions .btn, .cta-banner-actions .btn, .home-final-actions .btn, .section-head .btn { width:100%; }
   .section, .clean-wrap { padding:56px 20px; }
   .section-full, .section-dark { padding:56px 20px; }
+  .home-final-section { min-height:0; gap:42px; padding:56px 24px 28px; }
+  .home-final-actions { flex-direction:column; align-items:stretch; gap:12px; padding-top:24px; }
   h2 { font-size:clamp(28px,9vw,40px); }
   .grid-3, .grid-2, .clean-grid-3, .clean-grid-4, .clean-grid-2,
   .pricing-grid, .cases-grid, .blog-grid, .values-grid,
