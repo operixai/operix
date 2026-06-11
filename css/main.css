@@ -442,6 +442,14 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
 .case-metric-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-top:4px; font-family:sans-serif; }
 
 /* ── CTA Banner ── */
+.footer-cta-wrap {
+  padding:112px 32px 0;
+  background:var(--ivory);
+}
+.footer-cta-wrap .cta-banner {
+  max-width:1200px;
+  margin:0 auto;
+}
 .cta-banner {
   background:var(--slate); color:var(--ivory);
   padding:80px 64px; display:flex; align-items:center;
@@ -652,6 +660,7 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; }
   .niche-preview-inner { grid-template-columns:1fr; }
   .footer-top { grid-template-columns:1fr; gap:28px; }
   .footer-bottom { flex-direction:column; text-align:center; }
+  .footer-cta-wrap { padding:72px 20px 0; }
   .cta-banner { padding:44px 22px; flex-direction:column; align-items:flex-start; }
   .page-header { padding:108px 20px 44px; }
   .about-stats { grid-template-columns:1fr; }
