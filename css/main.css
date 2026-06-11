@@ -185,6 +185,7 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
 .section { padding:88px 32px; max-width:1200px; margin:0 auto; }
 .section-full { padding:88px 32px; background:var(--ivory-2); }
 .section-dark { padding:88px 32px; background:var(--slate); }
+.section.section-dark { border-radius:var(--radius-panel); overflow:hidden; }
 .section-dark h1, .section-dark h2, .section-dark h3, .section-dark .section-title { color:var(--ivory); }
 .section-dark p, .section-dark li { color:rgba(244,241,234,.70); }
 .section-dark .label, .section-dark .section-label, .section-dark .clean-kicker { color:rgba(244,241,234,.44); }
@@ -239,6 +240,26 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
 }
 .proof-avatar:first-child { margin-left:0; }
 .proof-text { font-size:13px; color:var(--muted); }
+.clean-note {
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:32px;
+  background:var(--ivory-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-panel);
+}
+.clean-note strong {
+  display:block;
+  margin-bottom:8px;
+  font-family:-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size:15px;
+  color:var(--slate);
+}
+.clean-note span {
+  display:block;
+  max-width:680px;
+  color:var(--slate-3);
+}
+.clean-note .btn { flex-shrink:0; }
 .proof-stars { color:var(--terracotta); font-size:12px; }
 
 /* floating orbs */
@@ -640,6 +661,8 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; }
   .hero-sub, .clean-sub { font-size:16px; margin-bottom:32px; }
   .hero-actions, .clean-actions, .cta-banner-actions { flex-direction:column; width:100%; }
   .hero-actions .btn, .clean-actions .btn, .cta-banner-actions .btn, .section-head .btn { width:100%; }
+  .clean-note { flex-direction:column; align-items:flex-start; padding:24px; }
+  .clean-note .btn { width:100%; }
   .section, .clean-wrap { padding:56px 20px; }
   .section-full, .section-dark { padding:56px 20px; }
   h2 { font-size:clamp(28px,9vw,40px); }
