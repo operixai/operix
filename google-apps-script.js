@@ -1,80 +1,57 @@
-// ═══════════════════════════════════════════════════════════
-// OPERIX — Google Apps Script для Google Sheets
-// ═══════════════════════════════════════════════════════════
-//
-// ИНСТРУКЦИЯ (5 минут):
-//
-// 1. Открой sheets.google.com → создай таблицу "Operix Leads"
-//
-// 2. В строке 1 добавь заголовки (по одному в каждую ячейку):
-//    A1: Дата
-//    B1: Имя
-//    C1: Email
-//    D1: Компания
-//    E1: Бюджет
-//    F1: Услуга
-//    G1: Сообщение
-//
-// 3. Расширения → Apps Script
-//    Удали весь код → вставь код ниже → Ctrl+S
-//
-// 4. Нажми "Развернуть" → "Новое развёртывание"
-//    - Тип: Веб-приложение
-//    - Выполнять как: Я
-//    - Доступ: Все
-//    → Нажми "Развернуть"
-//    → Разреши доступ (первый раз попросит войти в Google)
-//    → Скопируй URL вида: https://script.google.com/macros/s/XXXXX/exec
-//
-// 5. В файле contact.html найди строку:
-//    const GOOGLE_SHEETS_URL = 'ВСТАВЬ_ТВОЙ_URL_ЗДЕСЬ';
-//    Замени на свой URL → сохрани → залей на GitHub
-//
-// Готово! Все заявки будут появляться в таблице автоматически.
-// ═══════════════════════════════════════════════════════════
+// Operix — Google Apps Script
+// Deploy as: Web App → Execute as: Me → Access: Anyone
+// Paste the deployment URL into contact.html → SHEETS_URL
 
 function doPost(e) {
   try {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    const data  = JSON.parse(e.postData.contents);
+    
+    let data = {};
+    try {
+      data = JSON.parse(e.postData.contents);
+    } catch(parseErr) {
+      // fallback: parse form params
+      data = {};
+      if (e.parameter) {
+        for (const key in e.parameter) {
+          data[key] = e.parameter[key];
+        }
+      }
+    }
+
+    // Check if headers exist, add if not
+    const lastRow = sheet.getLastRow();
+    if (lastRow === 0) {
+      sheet.appendRow([
+        'Date', 'Name', 'Email', 'Company', 'Budget', 'Service', 'Message', 'Language', 'Source'
+      ]);
+    }
 
     sheet.appendRow([
-      new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent' }),
+      data.submitted_at ? new Date(data.submitted_at).toLocaleString('ru-RU', {timeZone:'Asia/Tashkent'}) : new Date().toLocaleString('ru-RU', {timeZone:'Asia/Tashkent'}),
       data.name    || '—',
       data.email   || '—',
       data.company || '—',
       data.budget  || '—',
       data.service || '—',
-      data.message || '—'
+      data.message || '—',
+      data.page_lang || 'en',
+      data.source  || 'website'
     ]);
 
-    // Опционально: подсветить новую строку жёлтым
-    const lastRow = sheet.getLastRow();
-    sheet.getRange(lastRow, 1, 1, 7)
-      .setBackground('#fff9c4');
-
     return ContentService
-      .createTextOutput(JSON.stringify({ status: 'ok', row: lastRow }))
+      .createTextOutput(JSON.stringify({ status: 'ok' }))
       .setMimeType(ContentService.MimeType.JSON);
 
-  } catch (err) {
+  } catch(err) {
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
 
-// Тест — можно запустить вручную в Apps Script
-function testSheet() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.appendRow([
-    new Date().toLocaleString('ru-RU'),
-    'Тест Имя',
-    'test@example.com',
-    'Test Company',
-    '$500 – $1,000',
-    'AI Customer Support Bot',
-    'Это тестовая заявка'
-  ]);
-  Logger.log('Тест успешен!');
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'alive', message: 'Operix Leads endpoint is running' }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
