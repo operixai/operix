@@ -219,6 +219,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btn && menu) {
     const setOpen = (open) => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
+      if (open) {
+        document.documentElement.classList.add('menu-open');
+        document.body.classList.add('menu-open');
+        document.body.dataset.menuScrollY = String(scrollY);
+        document.body.style.top = `-${scrollY}px`;
+      } else {
+        const previousScrollY = Math.abs(parseInt(document.body.dataset.menuScrollY || '0', 10)) || 0;
+        document.documentElement.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+        document.body.style.top = '';
+        delete document.body.dataset.menuScrollY;
+        window.scrollTo(0, previousScrollY);
+      }
+
       menu.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       menu.setAttribute('aria-hidden', open ? 'false' : 'true');

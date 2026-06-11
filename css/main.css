@@ -126,9 +126,11 @@ nav .logo img { height:28px; width:auto; }
 
 /* ── Mobile menu panel ── */
 .mobile-menu {
-  position:fixed; top:66px; left:0; right:0; bottom:0;
-  z-index:99; background:var(--ivory); border-top:1px solid var(--border);
-  padding:28px 20px;
+  position:fixed; inset:0;
+  z-index:99; background:var(--ivory);
+  padding:94px 20px calc(24px + env(safe-area-inset-bottom));
+  min-height:100vh; min-height:100dvh;
+  overflow-y:auto; overscroll-behavior:contain;
   transform:translateX(100%); opacity:0;
   transition:transform .28s var(--ease), opacity .28s ease;
   display:flex; flex-direction:column; pointer-events:none;
@@ -142,7 +144,13 @@ nav .logo img { height:28px; width:auto; }
   transition:color .2s;
 }
 .mobile-menu a:hover { color:var(--terracotta); }
-.mobile-menu-bottom { display:flex; flex-direction:column; gap:12px; padding-top:24px; }
+.mobile-menu-bottom { display:flex; flex-direction:column; gap:12px; padding-top:24px; margin-top:auto; }
+.mobile-menu .btn-primary,
+.mobile-menu .btn-primary:hover {
+  color:#fff;
+}
+html.menu-open, body.menu-open { overflow:hidden; }
+body.menu-open { position:fixed; left:0; right:0; width:100%; }
 
 /* ── Buttons ── */
 .btn {
@@ -609,7 +617,7 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; }
 
 @media (max-width:640px) {
   nav { height:62px; padding:0 16px; }
-  .mobile-menu { top:62px; }
+  .mobile-menu { padding-top:90px; }
   nav .logo img { height:24px; }
   .lang-btn { min-width:34px; height:30px; padding:0 8px; }
   .hero, .clean-hero { padding:108px 20px 54px; }

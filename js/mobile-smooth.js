@@ -47,9 +47,11 @@
 
       const menu = document.querySelector('.mobile-menu');
       const btn = document.querySelector('.mobile-menu-btn');
-      if (menu && menu.classList.contains('active')) {
-        menu.classList.remove('active');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        document.documentElement.classList.remove('menu-open');
         document.body.classList.remove('menu-open');
+        document.body.style.top = '';
         if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     });
