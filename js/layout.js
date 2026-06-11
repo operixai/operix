@@ -189,8 +189,8 @@ const FOOTER_HTML = `
     <div class="footer-col">
       <h5 data-t="footer_contact_col"></h5>
       <ul>
-        <li><a href="https://t.me/exyysdof" target="_blank" rel="noopener" data-t="footer_tg"></a></li>
-        <li><a href="mailto:travisofwork@gmail.com" data-t="footer_email"></a></li>
+        <li><a href="https://t.me/operixai" target="_blank" rel="noopener" data-t="footer_tg"></a></li>
+        <li><a href="https://www.instagram.com/operixagency/" target="_blank" rel="noopener" data-t="footer_email"></a></li>
         <li><a href="contact.html" data-t="footer_book"></a></li>
       </ul>
     </div>

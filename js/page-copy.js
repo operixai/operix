@@ -118,7 +118,7 @@ const OPX_PAGE_COPY = {
     plan2_f6:'Analytics dashboard',
     plan3_name:'Custom',
     plan3_price:'Custom',
-    plan3_suffix:'',
+    plan3_suffix:' / scoped',
     plan3_desc:'For deeper integrations, custom AI agents, or multi-department systems.',
     plan3_f1:'Custom AI agent development',
     plan3_f2:'Full-stack integrations',
@@ -271,7 +271,7 @@ const OPX_PAGE_COPY = {
     contact_privacy:'Your message may be processed by Formspree to deliver it to Operix. We do not sell your data.',
     contact_success_h:'Message sent.',
     contact_success_p:'Thanks. We will review your workflow and reply as soon as possible.',
-    contact_error:'Failed. Email us: travisofwork@gmail.com',
+    contact_error:'Failed. Message us on Telegram: @operixai',
 
     privacy_kicker:'Legal',
     privacy_h1:'Privacy Policy',
@@ -291,9 +291,9 @@ const OPX_PAGE_COPY = {
     privacy_h2_4:'Data retention',
     privacy_p4:'We keep communication records only as long as necessary for business, legal, and service delivery purposes.',
     privacy_h2_5:'Your rights',
-    privacy_p5:'You can ask us to access, correct, or delete your personal information by emailing travisofwork@gmail.com.',
+    privacy_p5:'You can ask us to access, correct, or delete your personal information by messaging Telegram @operixai.',
     privacy_h2_6:'Contact',
-    privacy_p6:'Questions about privacy? Email travisofwork@gmail.com or message Telegram @exyysdof.',
+    privacy_p6:'Questions about privacy? Message Telegram @operixai or Instagram @operixagency.',
 
     terms_kicker:'Legal',
     terms_h1:'Terms of Service',
@@ -316,7 +316,7 @@ const OPX_PAGE_COPY = {
     terms_h2_7:'Liability',
     terms_p7:'Operix is not responsible for indirect losses. Our total liability is limited to the amount paid for the specific project.',
     terms_h2_8:'Contact',
-    terms_p8:'Questions? Email travisofwork@gmail.com or Telegram @exyysdof.'
+    terms_p8:'Questions? Message Telegram @operixai or Instagram @operixagency.'
   },
   ru: {}
 };
@@ -437,7 +437,7 @@ OPX_PAGE_COPY.ru = {
   plan2_f6:'Дашборд аналитики',
   plan3_name:'Custom',
   plan3_price:'Custom',
-  plan3_suffix:'',
+  plan3_suffix:' / по scope',
   plan3_desc:'Для глубоких интеграций, кастомных AI-агентов или систем на несколько отделов.',
   plan3_f1:'Разработка кастомного AI-агента',
   plan3_f2:'Глубокие интеграции',
@@ -590,7 +590,7 @@ OPX_PAGE_COPY.ru = {
   contact_privacy:'Сообщение может быть обработано Formspree, чтобы доставить его в Operix. Мы не продаём ваши данные.',
   contact_success_h:'Сообщение отправлено.',
   contact_success_p:'Спасибо. Мы изучим workflow и ответим как можно скорее.',
-  contact_error:'Ошибка. Напишите нам: travisofwork@gmail.com',
+  contact_error:'Ошибка. Напишите нам в Telegram: @operixai',
 
   privacy_kicker:'Legal',
   privacy_h1:'Политика конфиденциальности',
@@ -610,9 +610,9 @@ OPX_PAGE_COPY.ru = {
   privacy_h2_4:'Хранение данных',
   privacy_p4:'Мы храним переписку только столько, сколько нужно для бизнеса, юридических целей и оказания услуг.',
   privacy_h2_5:'Ваши права',
-  privacy_p5:'Вы можете запросить доступ, исправление или удаление персональных данных по email travisofwork@gmail.com.',
+  privacy_p5:'Вы можете запросить доступ, исправление или удаление персональных данных через Telegram @operixai.',
   privacy_h2_6:'Контакт',
-  privacy_p6:'Вопросы по приватности: travisofwork@gmail.com или Telegram @exyysdof.',
+  privacy_p6:'Вопросы по приватности: Telegram @operixai или Instagram @operixagency.',
 
   terms_kicker:'Legal',
   terms_h1:'Условия оказания услуг',
@@ -635,7 +635,7 @@ OPX_PAGE_COPY.ru = {
   terms_h2_7:'Ответственность',
   terms_p7:'Operix не отвечает за косвенные убытки. Максимальная ответственность ограничена суммой, оплаченной за конкретный проект.',
   terms_h2_8:'Контакт',
-  terms_p8:'Вопросы: travisofwork@gmail.com или Telegram @exyysdof.'
+  terms_p8:'Вопросы: Telegram @operixai или Instagram @operixagency.'
 };
 
 function opxLang(){

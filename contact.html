@@ -34,8 +34,8 @@
         <li data-p="contact_b5"></li>
       </ul>
       <div class="clean-actions">
-        <a href="https://t.me/exyysdof" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Telegram @exyysdof</a>
-        <a href="mailto:travisofwork@gmail.com" class="btn btn-ghost">Email</a>
+        <a href="https://t.me/operixai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Telegram @operixai</a>
+        <a href="https://www.instagram.com/operixagency/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Instagram @operixagency</a>
       </div>
     </aside>
     <div class="contact-card anim">
@@ -67,10 +67,20 @@
 <script src="js/main.js?v=11"></script>
 <script src="js/page-copy.js?v=20260610-clean2"></script>
 <script>
-// ── FORM SUBMISSION: Formspree (email) + Google Sheets (database) ──
+// ── FORM SUBMISSION: Formspree (email) + Google Forms (response database) ──
 const FORMSPREE_URL = 'https://formspree.io/f/mwvjowed';
-// Google Sheets: paste your Apps Script URL below after deploying
-const SHEETS_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+// Hidden Google Form endpoint. Formspree remains the primary email channel.
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSchZEa61OI7zEETBlUXdk-KrpZBlXhiKxxQFIOaEpUJWe0qnA/formResponse';
+const GOOGLE_FORM_FIELDS = {
+  name: 'entry.2071930142',
+  email: 'entry.1650173209',
+  company: 'entry.1738699874',
+  budget: 'entry.615340276',
+  service: 'entry.728902409',
+  message: 'entry.1009440002',
+  submitted_at: 'entry.868583872',
+  page_lang: 'entry.1491191364'
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('lead-form');
@@ -92,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     payload.page_lang = lang;
 
     try {
-      // ── Send to Formspree (delivers to travisofwork@gmail.com) ──
+      // ── Send to Formspree ──
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -100,13 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       if (!res.ok) throw new Error('Formspree failed');
 
-      // ── Send to Google Sheets (fire and forget, don't block UX) ──
-      if (SHEETS_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
-        fetch(SHEETS_URL, {
+      // ── Send to Google Forms (fire and forget, don't block UX) ──
+      if (GOOGLE_FORM_URL) {
+        const googleFormData = new URLSearchParams();
+        Object.entries(GOOGLE_FORM_FIELDS).forEach(([key, entryId]) => {
+          googleFormData.append(entryId, payload[key] || '');
+        });
+        fetch(GOOGLE_FORM_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: googleFormData
         }).catch(() => {}); // silent fail — Formspree already got it
       }
 
@@ -127,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.appendChild(error);
       }
       error.textContent = lang === 'ru'
-        ? 'Ошибка. Напишите нам: travisofwork@gmail.com'
-        : 'Error. Email us: travisofwork@gmail.com';
+        ? 'Ошибка. Напишите нам в Telegram: @operixai'
+        : 'Error. Message us on Telegram: @operixai';
     }
   });
 });
