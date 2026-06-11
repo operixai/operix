@@ -558,6 +558,16 @@ footer { background:var(--slate); color:var(--ivory); padding:64px 32px 32px; }
   .cursor-glow { width:280px; height:280px; border-radius:50%; pointer-events:none; position:fixed; z-index:0; background:radial-gradient(circle, rgba(218,119,86,.05), transparent 70%); transform:translate(-50%,-50%); }
 }
 
+/* Items above fold: no animation delay */
+.clean-hero .anim, .clean-hero .clean-card,
+.page-header .anim, .hero .anim {
+  opacity:1 !important; transform:none !important; transition:none !important;
+}
+.outcome-card.anim.in, .outcome-card.anim.visible,
+.clean-card.anim.in, .clean-card.anim.visible {
+  opacity:1; transform:translateY(0);
+}
+
 /* ══════════════════════════
    RESPONSIVE
 ══════════════════════════ */
