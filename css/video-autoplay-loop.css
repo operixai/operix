@@ -1,1 +1,4 @@
-/* Replaced by css/main.css — do not use this file */
+/* Legacy fallback loaded by older cached pages. */
+.opx-video-badge {
+  display:none !important;
+}

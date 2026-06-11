@@ -309,6 +309,7 @@
 
   function runClean2(){
     patchHomepageHonesty();
+    document.querySelectorAll('.opx-video-badge').forEach(el => el.remove());
   }
 
   if (document.readyState === 'loading') {
@@ -323,4 +324,5 @@
     }
   });
   setTimeout(runClean2, 500);
+  setTimeout(runClean2, 1500);
 })();
