@@ -1202,18 +1202,21 @@ function addHaptics() {
 
 // ── ANIMATIONS ──
 function initAnim() {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const delay = parseInt(e.target.dataset.delay || 0);
-        setTimeout(() => e.target.classList.add('in'), delay);
-      }
+  setTimeout(function() {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var delay = parseInt(e.target.dataset.delay || 0);
+          setTimeout(function() { e.target.classList.add("in"); }, delay);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+    document.querySelectorAll(".anim").forEach(function(el, i) {
+      if (!el.dataset.delay) el.dataset.delay = (i % 6) * 60;
+      obs.observe(el);
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.anim').forEach((el, i) => {
-    if (!el.dataset.delay) el.dataset.delay = (i % 4) * 80;
-    obs.observe(el);
-  });
+  }, 150);
 }
 
 // ── NAV ──
