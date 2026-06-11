@@ -73,7 +73,11 @@
 <script src="js/main.js?v=11"></script>
 <script src="js/page-copy.js?v=20260610-clean2"></script>
 <script>
+// ── FORM SUBMISSION: Formspree (email) + Google Sheets (database) ──
 const FORMSPREE_URL = 'https://formspree.io/f/mwvjowed';
+// Google Sheets: paste your Apps Script URL below after deploying
+const SHEETS_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('lead-form');
   const success = document.getElementById('success-state');
@@ -90,16 +94,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navigator.vibrate) navigator.vibrate([10,40,70]);
 
     const payload = Object.fromEntries(new FormData(form).entries());
+    payload.submitted_at = new Date().toISOString();
+    payload.page_lang = lang;
+
     try {
+      // ── Send to Formspree (delivers to travisofwork@gmail.com) ──
       const res = await fetch(FORMSPREE_URL, {
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify(payload)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
       });
       if (!res.ok) throw new Error('Formspree failed');
+
+      // ── Send to Google Sheets (fire and forget, don't block UX) ──
+      if (SHEETS_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+        fetch(SHEETS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {}); // silent fail — Formspree already got it
+      }
+
+      // ── Success ──
       form.style.display = 'none';
       success.style.display = 'block';
       if (navigator.vibrate) navigator.vibrate([15,30,15,30,80]);
+
     } catch (err) {
       submitBtn.disabled = false;
       submitTxt.textContent = original || (lang === 'ru' ? 'Отправить' : 'Send message');
@@ -111,7 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         error.style.color = '#b91c1c';
         form.appendChild(error);
       }
-      error.textContent = OPX_PAGE_COPY[lang].contact_error;
+      error.textContent = lang === 'ru'
+        ? 'Ошибка. Напишите нам: travisofwork@gmail.com'
+        : 'Error. Email us: travisofwork@gmail.com';
     }
   });
 });
