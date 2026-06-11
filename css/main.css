@@ -502,6 +502,51 @@ body.menu-open { position:fixed; left:0; right:0; width:100%; }
 .page-header h1 { margin-bottom:20px; }
 .page-header p { font-size:18px; max-width:640px; }
 
+.legal-page .page-header {
+  padding-bottom:36px;
+}
+
+.legal-page .footer-cta-wrap {
+  display:none;
+}
+
+.legal-wrap {
+  padding-top:22px;
+  padding-bottom:96px;
+}
+
+.legal-body {
+  max-width:780px;
+}
+
+.legal-body > * + * {
+  margin-top:16px;
+}
+
+.legal-body h2 {
+  font-size:clamp(24px, 2.4vw, 34px);
+  line-height:1.12;
+  letter-spacing:-.025em;
+  margin-top:42px;
+  margin-bottom:10px;
+}
+
+.legal-body p,
+.legal-body li {
+  font-size:16px;
+  line-height:1.75;
+  color:var(--slate-3);
+}
+
+.legal-body ul {
+  margin:10px 0 0;
+  padding-left:22px;
+}
+
+.legal-body li + li {
+  margin-top:6px;
+}
+
 /* ── Services ── */
 .service-detail { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:clamp(32px,6vw,72px); padding:72px 0; border-bottom:1px solid var(--border); align-items:start; }
 .service-detail.reverse .service-detail-visual { order:-1; }
