@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A free Operix workflow audit for one repeated business handoff: lead intake, follow-up, reporting, inbox triage, or CRM updates.">
+<meta name="description" content="Get a free Operix workflow audit. Send one process that keeps slipping and receive one practical AI automation opportunity for your team.">
 <title>Free Workflow Audit — Operix</title>
 <link rel="stylesheet" href="css/main.css?v=20260612-mobileperfect1">
 <link rel="icon" type="image/png" sizes="32x32" href="/operix/operix-tab-icon-32.png?v=20260610-hard4">
@@ -13,133 +13,168 @@
 <link rel="manifest" href="/operix/site.webmanifest?v=20260610-hard4">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-.audit-intro{
-  display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-  gap:40px;
-  align-items:start;
+.audit-hero{
+  padding:140px 32px 72px;
+  max-width:1160px;
+  margin:0 auto;
 }
-.audit-list{
+.audit-hero h1{
+  max-width:880px;
+}
+.audit-hero p{
+  max-width:680px;
+  font-size:18px;
+}
+.audit-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(360px,1fr);
+  gap:1px;
+  background:var(--border);
+  max-width:1160px;
+  margin:0 auto 88px;
+  border:1px solid var(--border);
+}
+.audit-panel{
+  background:var(--ivory);
+  padding:40px;
+}
+.audit-panel h2{
+  font-size:clamp(26px,3vw,40px);
+  line-height:1.12;
+  margin-bottom:16px;
+}
+.audit-panel p,
+.audit-panel li{
+  color:var(--slate-3);
+  font-size:16px;
+  line-height:1.72;
+}
+.audit-panel ul{
+  margin:18px 0 0;
+  padding-left:20px;
+}
+.audit-steps{
   display:grid;
   gap:14px;
-  margin-top:24px;
+  margin-top:28px;
 }
-.audit-line{
+.audit-step{
   border-top:1px solid var(--border);
-  padding-top:14px;
+  padding-top:16px;
 }
-.audit-line strong{
+.audit-step strong{
   display:block;
   color:var(--slate);
-  margin-bottom:5px;
-}
-.audit-line span{
-  color:var(--slate-3);
-  font-size:15px;
-  line-height:1.65;
-  font-family:'Lora',serif;
-}
-.audit-form-card{
-  background:var(--ivory);
-  border:1px solid var(--border);
-  padding:36px;
-}
-.audit-form-card h2{
-  font-size:clamp(28px,3vw,42px);
-  line-height:1.12;
-  margin-bottom:14px;
-}
-.audit-form-card p{
-  color:var(--slate-3);
-  line-height:1.7;
+  margin-bottom:6px;
 }
 .audit-form{
   display:grid;
   gap:16px;
-  margin-top:24px;
 }
 .audit-form textarea{
-  min-height:138px;
+  min-height:150px;
+}
+.audit-proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+.audit-proof span{
+  border:1px solid rgba(21,21,19,.14);
+  background:var(--ivory-2);
+  color:var(--slate-3);
+  padding:8px 11px;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-family:sans-serif;
 }
 @media(max-width:900px){
-  .audit-intro{grid-template-columns:1fr}
-  .audit-form-card{padding:26px}
+  .audit-hero{padding:108px 20px 48px}
+  .audit-layout{
+    grid-template-columns:1fr;
+    margin:0 20px 64px;
+  }
+  .audit-panel{padding:28px}
 }
 </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 
-<header class="page-header">
+<header class="audit-hero">
   <span class="label">Free workflow audit</span>
-  <h1>A small audit for one repeated handoff.</h1>
-  <p>Send us one workflow that keeps slipping. We will map the smallest useful AI automation around the tools your team already uses.</p>
+  <h1>Send us one process that keeps slipping.</h1>
+  <p>We will map one practical AI automation opportunity: where the handoff breaks, what information is missing, and what small workflow could make the process calmer.</p>
+  <div class="audit-proof">
+    <span>No CRM access needed</span>
+    <span>No private customer data</span>
+    <span>One workflow only</span>
+    <span>Practical next step</span>
+  </div>
 </header>
 
-<main>
-  <section class="clean-wrap" style="padding-top:0">
-    <div class="audit-intro">
-      <div>
-        <span class="clean-kicker">What we inspect</span>
-        <h2 class="section-title" style="margin-bottom:18px">Where work gets stuck.</h2>
-        <p>Most automation opportunities are not dramatic. They are small handoffs repeated every day: a lead waits, context is missing, a CRM record is incomplete, or a follow-up depends on memory.</p>
+<main class="audit-layout">
+  <section class="audit-panel">
+    <h2>What we look for.</h2>
+    <p>Most workflow problems are small and repetitive: a lead waits, a manager lacks context, a CRM record is incomplete, or a follow-up depends on memory.</p>
+    <ul>
+      <li>Lead intake and qualification gaps.</li>
+      <li>Inbox, form, Telegram, WhatsApp, or CRM handoffs.</li>
+      <li>Manual reporting and repeated status updates.</li>
+      <li>Follow-up workflows that are easy to forget.</li>
+    </ul>
 
-        <div class="audit-list">
-          <div class="audit-line">
-            <strong>Lead intake</strong>
-            <span>What arrives, what is missing, and who needs to act first.</span>
-          </div>
-          <div class="audit-line">
-            <strong>Routing</strong>
-            <span>Where the information should go: CRM, Sheets, email, Telegram, or a dashboard.</span>
-          </div>
-          <div class="audit-line">
-            <strong>Follow-up</strong>
-            <span>What a useful next message should contain while the context is still fresh.</span>
-          </div>
-        </div>
+    <div class="audit-steps">
+      <div class="audit-step">
+        <strong>1. You describe one workflow.</strong>
+        <p>Keep it simple: what comes in, who handles it, where it goes, and where it slows down.</p>
       </div>
-
-      <div class="audit-form-card anim">
-        <h2>Request the audit.</h2>
-        <p>Describe one process. Do not send passwords, CRM access, or private customer data.</p>
-
-        <form id="audit-form" class="audit-form contact-form">
-          <div class="form-row-clean">
-            <div class="form-group-clean">
-              <label class="form-label">Name</label>
-              <input class="form-input" type="text" name="name" required>
-            </div>
-            <div class="form-group-clean">
-              <label class="form-label">Email</label>
-              <input class="form-input" type="email" name="email" required>
-            </div>
-          </div>
-          <div class="form-group-clean">
-            <label class="form-label">Company</label>
-            <input class="form-input" type="text" name="company">
-          </div>
-          <div class="form-group-clean">
-            <label class="form-label">Workflow</label>
-            <textarea class="form-textarea" name="message" rows="6" required placeholder="Example: new leads arrive by email, then someone manually asks budget, area and timeline before updating CRM."></textarea>
-          </div>
-          <input type="hidden" name="budget" value="Not sure yet">
-          <input type="hidden" name="service" value="Free Workflow Audit">
-          <button type="submit" class="btn btn-primary btn-lg" id="audit-submit"><svg width="16" height="16"><use href="#i-send"/></svg><span id="audit-submit-text">Request audit</span></button>
-          <p class="form-hint">We reply with one practical automation angle, not a giant platform pitch.</p>
-        </form>
-
-        <div class="success-state-clean" id="audit-success">
-          <h3>Request received.</h3>
-          <p>We will review the workflow and reply with one practical automation opportunity.</p>
-        </div>
+      <div class="audit-step">
+        <strong>2. We map the automation opportunity.</strong>
+        <p>We identify one narrow AI workflow that fits around your existing tools.</p>
+      </div>
+      <div class="audit-step">
+        <strong>3. You get a practical recommendation.</strong>
+        <p>No big platform pitch. Just the smallest useful next step and what it would connect to.</p>
       </div>
     </div>
   </section>
 
-  <section class="clean-wrap" style="padding-top:0">
-    <div class="clean-note">
-      A good AI workflow should feel boring in the best way: clear, reliable, and easy to hand back to a human.
+  <section class="audit-panel">
+    <h2>Request the audit.</h2>
+    <p>Tell us where the process breaks. We will reply with one useful automation angle.</p>
+
+    <form id="audit-form" class="audit-form contact-form">
+      <div class="form-row-clean">
+        <div class="form-group-clean">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" name="name" required>
+        </div>
+        <div class="form-group-clean">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-group-clean">
+        <label class="form-label">Company</label>
+        <input class="form-input" type="text" name="company">
+      </div>
+      <div class="form-group-clean">
+        <label class="form-label">What workflow keeps slipping?</label>
+        <textarea class="form-textarea" name="message" rows="6" required placeholder="Example: Website leads arrive by email, then someone manually asks budget, area and timeline before adding them to CRM."></textarea>
+      </div>
+      <input type="hidden" name="budget" value="Not sure yet">
+      <input type="hidden" name="service" value="Free Workflow Audit">
+      <button type="submit" class="btn btn-primary btn-lg" id="audit-submit"><svg width="16" height="16"><use href="#i-send"/></svg><span id="audit-submit-text">Request audit</span></button>
+      <p class="form-hint">We only need a process description. Do not send passwords, private customer data, or CRM access.</p>
+    </form>
+
+    <div class="success-state-clean" id="audit-success">
+      <h3>Request received.</h3>
+      <p>We will review the workflow and reply with one practical automation opportunity.</p>
     </div>
   </section>
 </main>
